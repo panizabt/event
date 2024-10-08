@@ -39,3 +39,6 @@ class PaymentService:
     @classmethod
     def find_by_payment_type(cls, payment_type):
         return cls.repo.find_by_payment_type(Payment._payment_type == payment_type)
+
+
+#test
