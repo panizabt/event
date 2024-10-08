@@ -11,30 +11,9 @@ class PaymentService:
         return payment
 
     @classmethod
-    def save(cls, id):
-        cls.repo.save(id)
-        return id
-
-    @classmethod
-    def edit(cls, payment_type):
-        cls.repo.edit(payment_type)
-        return payment_type
-
-    @classmethod
-    def save(cls, amount):
-        cls.repo.save(amount)
-        return amount
-
-    @classmethod
-    def save(cls, date_time):
-        cls.repo.save(date_time)
-        return date_time
-
-    @classmethod
-    def save(cls, description):
-        cls.repo.save(description)
-        return description
-
+    def edit(cls, payment):
+        cls.repo.edit(payment)
+        return payment
 
     @classmethod
     def remove(cls, id):
@@ -51,7 +30,7 @@ class PaymentService:
 
     @classmethod
     def find_by_ticket(cls, ticket_id):
-        return cls.repo.find_by_ticket(ticket_id)
+        return cls.repo.find_by(Payment._ticket_id == ticket_id)
 
     @classmethod
     def find_by_data_time(cls, data_time):
@@ -59,4 +38,7 @@ class PaymentService:
 
     @classmethod
     def find_by_payment_type(cls, payment_type):
-        return cls.repo.find_by_payment_type(payment_type)
+        return cls.repo.find_by_payment_type(Payment._payment_type == payment_type)
+
+
+#test

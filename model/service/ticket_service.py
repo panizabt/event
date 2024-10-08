@@ -6,7 +6,7 @@ class TicketService:
     repo = CrudRepository(Ticket)
 
     @classmethod
-    def save (cls, ticket):
+    def save(cls, ticket):
         cls.repo.save(ticket)
 
     @classmethod
@@ -26,9 +26,9 @@ class TicketService:
         return cls.repo.find_by_id(id)
 
     @classmethod
-    def find_by_customer(cls, customer):
-        return cls.repo.find_by_customer(customer)
+    def find_by_customer(cls, customer_id):
+        return cls.repo.find_by(Ticket._customer_id == customer_id)
 
     @classmethod
-    def find_by_event(cls, event):
-        return cls.repo.find_by_event(event)
+    def find_by_event(cls, event_id):
+        return cls.repo.find_by(Ticket._event_id == event_id)
