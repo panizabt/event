@@ -29,3 +29,10 @@ class TicketController:
             return True, "Ticket Removed"
         except Exception as e:
             return False, str(e)
+
+    @classmethod
+    def find_all(cls):
+        try:
+            return True, TicketService.find_all()
+        except Exception as e:
+            return False, str(e)
