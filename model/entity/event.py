@@ -1,3 +1,5 @@
+from sqlalchemy.orm import relationship
+
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
@@ -15,7 +17,12 @@ class Event(Base):
     _duration = Column("duration", Integer, nullable=False)
     _description = Column("description", String(100), nullable=False)
     _price = Column("price", Integer, nullable=False)
-    
+
+    _ticket = Column("ticket", Integer, nullable=False)
+    ticket = relationship("Ticket", back_populates="events")
+
+    _salon = Column("salon", String(30), nullable=False)
+    salon = relationship("Salon", back_populates="events")
     
     def __init__(self, id, title_date, start_time,  end_date_time, event_type, duration, description, price):
         
@@ -97,3 +104,6 @@ class Event(Base):
     @description.setter
     def description(self, description):
         self.description = description
+
+
+#test2

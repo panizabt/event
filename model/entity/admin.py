@@ -1,6 +1,6 @@
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String
-from tools.validation import *
+from model.tools.validation import *
 
 
 class Admin(Base):
