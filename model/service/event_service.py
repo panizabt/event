@@ -35,4 +35,7 @@ class EventService:
 
     @classmethod
     def find_by_salon(cls, salon):
-        return cls.repo.find_by_salon(salon)
+       return cls.repo.find_by_salon(salon)
+
+
+#test
