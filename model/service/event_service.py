@@ -38,4 +38,4 @@ class EventService:
        return cls.repo.find_by_salon(salon)
 
 
-#test1
+#test2
