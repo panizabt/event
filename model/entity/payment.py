@@ -1,8 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from datetime import datetime
-
 from sqlalchemy.orm import relationship
-
 from model.entity.base import Base
 
 class Payment(Base):
