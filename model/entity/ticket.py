@@ -10,16 +10,16 @@ class Ticket(Base):
     _price = Column("price", Integer, nullable=False)
 
     _payment = Column("payment", Integer, nullable=False)
-    _event = Column("event_relation", String(20), nullable=False)
+    _event = Column("event", String(20), nullable=False)
 
-    def __init__(self, id, title, start_date_time, duration, event, price , payment):
+    def __init__(self, id, title, start_date, duration, event, price , payment):
         self.id = id
         self.title = title
-        self.start_date_time = start_date_time
+        self.start_date = start_date
         self.duration = duration
-        self.event_relation = event_relation
+        self.event = event
         self.price = price
-        self.payment_relation = payment_relation
+        self.payment = payment
 
         @property
         def id(self):
@@ -38,12 +38,12 @@ class Ticket(Base):
             self._title = title
 
         @property
-        def start_date_time(self):
-            return self._start_date_time
+        def start_date(self):
+            return self._start_date
 
-        @start_date_time.setter
-        def start_date_time(self, start_date_time):
-            self._start_date_time = start_date_time
+        @start_date.setter
+        def start_date(self, start_date):
+            self._start_date = start_date
 
         @property
         def duration(self):
@@ -54,12 +54,12 @@ class Ticket(Base):
             self._duration = duration
 
         @property
-        def event_relation(self):
-            return self._event_relation
+        def event(self):
+            return self._event
 
-        @event_relation.setter
-        def event_relation(self, event_relation):
-            self._event_relation = event_relation
+        @event.setter
+        def event(self, event):
+            self._event = event
 
         @property
         def price(self):
@@ -70,10 +70,10 @@ class Ticket(Base):
             self._price = price
 
         @property
-        def payment_relation(self):
+        def payment(self):
             return self._payment
 
-        @payment_relation.setter
-        def payment_relation(self, payment_relation):
-            self._payment = payment_relation
+        @payment.setter
+        def payment_relation(self, payment):
+            self._payment = payment
 
