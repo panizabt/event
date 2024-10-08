@@ -13,14 +13,6 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-
-# CRUD
-# create insert save
-# read   select find
-# update update edit
-# delete delete remove
-
-
 class CrudRepository:
     def __init__(self, class_name):
         self.class_name = class_name
