@@ -1,7 +1,6 @@
-import Base
-from tools.Validator import *
-
-from tools.validation import no_numbers, no_space, password_validator
+#from model.entity import Base
+from sqlalchemy import Column, Integer, String
+from tools.validation import *
 
 
 class Admin(Base):
@@ -35,7 +34,7 @@ class Admin(Base):
 
     @surname.setter
     def surname(self, surname):
-        self._surname = validator.no_numbers(surname, "Invalid Surname")
+        self._surname = no_numbers(surname, "Invalid Surname")
 
     @property
     def username(self):
