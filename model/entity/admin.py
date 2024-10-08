@@ -4,13 +4,13 @@ from tools.validation import *
 
 
 class Admin(Base):
-    __tablename__ = 'admin'
-    _id = Column(Integer, primary_key=True)
-    _name = Column(String, nullable=False)
-    _surname = Column(String, nullable=False)
-    _username = Column(String, nullable=False)
-    _password = Column(String, nullable=False)
-    _access_level = Column(Integer, nullable=False)
+    __tablename__ = 'admin_tbl'
+    _id = Column(Integer, primary_key=True, autoincrement=True)
+    _name = Column(String(20), nullable=False)
+    _surname = Column(String(20), nullable=False)
+    _username = Column(String(20), nullable=False)
+    _password = Column(String(20), nullable=False)
+    _access_level = Column(String(10), nullable=False)
 
     def __init__(self, id, name, surname, username, password, access_level):
         self.id = id
@@ -66,4 +66,4 @@ class Admin(Base):
 
     @access_level.setter
     def access_level(self, access_level):
-        pass
+        self._access_level = access_level
