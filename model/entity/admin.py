@@ -12,6 +12,14 @@ class Admin(Base):
     _password = Column(String, nullable=False)
     _access_level = Column(Integer, nullable=False)
 
+    def __init__(self, id, name, surname, username, password, access_level):
+        self.id = id
+        self.name = name
+        self.surname = surname
+        self.username = username
+        self.password = password
+        self.access_level = access_level
+        
     @property
     def id(self):
         return self._id
