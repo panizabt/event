@@ -4,7 +4,7 @@ from tools.validation import *
 
 
 class Admin(Base):
-    __tablename__ = 'admin'
+    __tablename__ = 'admin_tbl'
     _id = Column(Integer, primary_key=True, autoincrement=True)
     _name = Column(String(20), nullable=False)
     _surname = Column(String(20), nullable=False)
