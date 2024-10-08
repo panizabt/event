@@ -1,5 +1,6 @@
 import Base
-import admin_validator
+from tools import validator
+
 
 class Admin(Base):
     __tablename__ = 'admin'
@@ -24,7 +25,7 @@ class Admin(Base):
 
     @name.setter
     def name(self, name):
-        self._name = Validation.name_validator(name, "Invalid Name")
+        self._name = validator.name_validator(name, "Invalid Name")
 
     @property
     def surname(self):
@@ -32,7 +33,7 @@ class Admin(Base):
 
     @surname.setter
     def surname(self, surname):
-        self._surname = Validation.name_validator(surname, "Invalid Surname")
+        self._surname = validator.no_numbers(surname, "Invalid Surname")
 
     @property
     def username(self):
@@ -40,7 +41,7 @@ class Admin(Base):
 
     @username.setter
     def username(self, username):
-        self._username = Validation.name_validator(username, "Invalid Username")
+        self._username = validator.name_validator(username, "Invalid Username")
 
     @property
     def password(self):
@@ -48,7 +49,7 @@ class Admin(Base):
 
     @password.setter
     def password(self, password):
-        self._password = Validation.name_validator(password, "Invalid Password")
+        self._password = validator.name_validator(password, "Invalid Password")
 
     @property
     def access_level(self):
@@ -56,4 +57,4 @@ class Admin(Base):
 
     @access_level.setter
     def access_level(self, access_level):
-        self._access_level = Validation.int_validator(access_level, "Invalid Access Level")
+        self._access_level = validator.int_validator(access_level, "Invalid Access Level")
