@@ -50,5 +50,13 @@ class PaymentService:
         return cls.repo.find_by_id(id)
 
     @classmethod
-    def find_by_ticket(cls, by):
-        return cls.repo.find_by(by)
+    def find_by_ticket(cls, ticket_id):
+        return cls.repo.find_by_ticket(ticket_id)
+
+    @classmethod
+    def find_by_data_time(cls, data_time):
+        return cls.repo.find_by_data_time(data_time)
+
+    @classmethod
+    def find_by_payment_type(cls, payment_type):
+        return cls.repo.find_by_payment_type(payment_type)
