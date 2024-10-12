@@ -1,4 +1,4 @@
-from sqlalchemy import *
+from sqlalchemy import Column, Integer, String, Date, ForeignKey
 from sqlalchemy.orm import relationship
 
 from model.entity.base import Base
@@ -21,7 +21,7 @@ class Ticket(Base):
     _event_id = Column("event", Integer, ForeignKey("event_tbl.id"))
     event = relationship("Event")
 
-    def __init__(self, id, title, start_date, duration, event, price, payment):
+    def __init__(self, id, title, start_date, duration, event, price, payment ,customer_id):
         self.id = id
         self.title = title
         self.start_date = start_date
@@ -29,6 +29,7 @@ class Ticket(Base):
         self.event = event
         self.price = price
         self.payment = payment
+        self.customer_id = customer_id
 
     @property
     def id(self):
