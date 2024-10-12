@@ -42,21 +42,34 @@ class EventController
     @classmethod
     def find_by_title(cls, title_date):
         try:
-            return True, EventService.find_by_title(title_date)
+            event =  EventService.find_by_title(title_date)
+            if event:
+                return True, event
+            else:
+                return False, "Event not found"
         except Exception as e:
             return False, str(e)
 
     @classmethod
     def find_by_date_time(cls, start_date_time, end_date_time):
         try:
-            return True, EventService.find_by_date_time(start_date_time, end_date_time)
+            event =  EventService.find_by_date_time(start_date_time, end_date_time)
+            if event:
+                return True, event
+            else:
+                return False, "Event not found"
         except Exception as e:
             return False, str(e)
 
     @classmethod
     def find_by_salon(cls, description):
         try:
-            return True, EventService.find_by_salon(description)
+            event =  EventService.find_by_salon(description)
+            if event:
+                return True, event
+            else:
+                return False, "event not fount"
         except Exception as e:
             return False, str(e)
+
         
