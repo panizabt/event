@@ -1,8 +1,8 @@
-from modle.entity.event import Event
-from modle.service.event_service import EventService
+from model.entity.event import Event
+from model.service.event_service import EventService
 
 
-class EventController
+class EventController:
 
     @classmethod
     def save(cls, title_date, start_time, end_date_time, event_type, duration, description, price):
