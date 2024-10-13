@@ -1,4 +1,4 @@
 from controller.customer_controller import CustomerController
 
 print(CustomerController.save("sara","akbari","sakbari","123",
-                              "ashrafi","093364587965","125469872"))
+                              "ashrafi",321456987,12365478))
