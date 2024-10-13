@@ -54,9 +54,16 @@ class CustomerController:
               return False, str(c)
 
     @classmethod
-    def find_by_username(cls, username):
+    def find_by_name(cls, name):
         try:
-            return True, CustomerService.find_by_username(username)
+            return True, CustomerService.find_by_name(name)
+        except Exception as c:
+            return False, str(c)
+
+    @classmethod
+    def find_by_family(cls, family):
+        try:
+            return True, CustomerService.find_by_family(family)
         except Exception as c:
             return False, str(c)
 

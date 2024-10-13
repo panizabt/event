@@ -2,7 +2,7 @@ from model.entity.customer import Customer
 from model.repository.crud_repository import CrudRepository
 
 
-class CostumerService:
+class CustomerService:
     repo = CrudRepository(Customer)
 
     @classmethod
