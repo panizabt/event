@@ -1,21 +1,25 @@
 import re
-
-class Validation:
- def no_numbers(prompt,message):
-     if type(prompt) == str and re.match('^[a-zA-z\s]{3,20}$', prompt):
-         return prompt
-     else:
-         raise ValueError(message)
-
- def no_space(prompt,message):
-     if type(prompt) == str and re.match('^\w{3,20}$', prompt):
-         return prompt
-     else:
-         raise ValueError(message)
+from datetime import datetime,date
 
 
- def password_validator(prompt):
-     if type(prompt) == str and re.match(r'^.*(?=a-zA-Z0-9)\w{5,20}$', prompt):
-         return prompt
-     else:
-         raise ValueError(message)
+class Validator:
+    @classmethod
+    def name_validator(cls, name, message):
+        if type(name) ==  str and re.match(r"^[a-zA-Z\s]{2,30}$", name):
+            return name
+        else:
+            raise ValueError(message)
+
+    @classmethod
+    def username_validator(cls, username, message):
+        if type(username) ==  str and re.match(r"^[\w@!#$%^&*\s]{2,30}$", username):
+            return username
+        else:
+            raise ValueError(message)
+
+    @classmethod
+    def password_validator(cls, password, message):
+        if re.match(r"^[\w@!#$%^&*\s]{2,16}$", password):
+            return password
+        else:
+            raise ValueError(message)

@@ -1,5 +1,5 @@
 from model.entity.base import Base
-from tools import Validation
+from tools import validation
 from sqlalchemy import Column, Integer, String
 
 
