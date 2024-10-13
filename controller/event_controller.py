@@ -44,7 +44,6 @@ def find_by_title(cls, title_date):
 @classmethod
 @exception_handling
 def find_by_date_time(cls, start_date_time, end_date_time):
-
        return  EventService.find_by_date_time(start_date_time, end_date_time)
 
 
