@@ -15,7 +15,7 @@ class Payment(Base):
     _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
     ticket = relationship("Ticket", back_populates="payment")
 
-    def __init__(self, id, amount, date_time, payment_type,description):
+    def __init__(self, id, amount, date_time, payment_type, description):
         self.id = id
         self.amount = amount
         self.date_time = date_time
