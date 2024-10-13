@@ -23,3 +23,22 @@ class Validator:
             return password
         else:
             raise ValueError(message)
+
+    @classmethod
+    def address_validator(cls, address, message):
+        if type(address) == str and re.match(r"^[a-zA-Z\s]{2,30}$", address):
+            return address
+
+    @classmethod
+    def postal_code_validator(cls, postal_code, message):
+        if type(postal_code) == str and re.match(r"^[0-9\s]{10}$", postal_code):
+            return postal_code
+    @classmethod
+    def family_validator(cls, family, message):
+        if type(family) == str and re.match(r"^[a-zA-Z\s]{2,30}$", family):
+            return family
+
+    @classmethod
+    def phone_validator(cls, phone, message):
+        if type(phone) == str and re.match(r"^[0-9\s]{8}$", phone):
+            return phone
