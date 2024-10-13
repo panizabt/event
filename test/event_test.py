@@ -20,4 +20,4 @@ s_t = time
 e_t = datetime(None,None,None,20,0,0)
 print (EventController.save( d_t, s_t, e_t,"konserr", "konsert ziba" "2000"
 print (EventController.edit(None
-print (EventController.remove(
+print (EventController.remove(u
