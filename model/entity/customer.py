@@ -40,7 +40,7 @@ class Customer(Base):
 
     @name.setter
     def name(self, name):
-        self._name = Validation.name_validator(name, "Invalid Name")
+        self._name = validation.name_validator(name, "Invalid Name")
 
     @property
     def family(self):
@@ -48,7 +48,7 @@ class Customer(Base):
 
     @family.setter
     def family(self, family):
-        self._family = Validation.family_validator(family, "Invalid Family")
+        self._family = validation.family_validator(family, "Invalid Family")
 
     @property
     def username(self):
@@ -65,3 +65,30 @@ class Customer(Base):
     @password.setter
     def password(self, password):
         self._password = password
+
+    @property
+    def address(self):
+        return self._address
+
+    @address.setter
+    def address(self, address):
+        self._address = address
+
+    @property
+    def phone(self):
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        self._phone = phone
+
+    @property
+    def postal_code(self):
+        return self._postal_code
+
+    @postal_code.setter
+    def postal_code(self, postal_code):
+        self._postal_code = postal_code
+
+
+
