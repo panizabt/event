@@ -55,7 +55,7 @@ class Customer(Base):
 
     @username.setter
     def username(self, username):
-        self._username = username
+        self._username = username.username_validator(username, "Invalid Username")
 
     @property
     def password(self):
@@ -63,7 +63,7 @@ class Customer(Base):
 
     @password.setter
     def password(self, password):
-        self._password = password
+        self._password = password.password_validator(password, "Invalid Password")
 
     @property
     def address(self):
@@ -71,7 +71,7 @@ class Customer(Base):
 
     @address.setter
     def address(self, address):
-        self._address = address
+        self._address = address.address_validator(address, "Invalid Address")
 
     @property
     def phone(self):
@@ -79,7 +79,7 @@ class Customer(Base):
 
     @phone.setter
     def phone(self, phone):
-        self._phone = phone
+        self._phone = phone.phone_validator(phone, "Invalid Phone")
 
     @property
     def postal_code(self):
@@ -87,7 +87,7 @@ class Customer(Base):
 
     @postal_code.setter
     def postal_code(self, postal_code):
-        self._postal_code = postal_code
+        self._postal_code = postal_code.postal_code_validator(postal_code, "Invalid Postal Code")
 
 
 
