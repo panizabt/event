@@ -1,3 +1,26 @@
 from controller.admin_controller import AdminController
+from model.entity.admin import Admin
+# database
+from sqlalchemy import create_engine
+from sqlalchemy_utils import create_database, database_exists
 
-print(AdminController.save("ali", "alipour", "ali", "ali123", "0001"))
+from model.entity.base import Base
+
+connection_string = "mysql+pymysql://root:root123@localhost:3306/mft"
+if not database_exists(connection_string):
+    create_database(connection_string)
+
+engine = create_engine(connection_string)
+
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
+
+
+AdminController.save("ali","hossieni","ali","ali123", "0001")
+AdminController.save("ali","alipour","ali","ali123", "0001")
+
+
+
+
+# Admin(1,"ali","hossieni","ali","ali123", "0001")
+# print(AdminController.edit(1 ,"ali", "alipour", "ali", "ali123", "0001"))
