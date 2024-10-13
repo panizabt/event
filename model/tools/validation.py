@@ -15,8 +15,8 @@ class Validation:
 #         raise ValueError(message)
 #
 #
-# def password_validator(prompt):
-#     if type(prompt) == str and re.match('^.*(?=a-zA-Z0-9)\w{5,20}$', prompt):
-#         return prompt
-#     else:
-#         raise ValueError(message)
+ def password_validator(prompt):
+     if type(prompt) == str and re.match(r'^.*(?=a-zA-Z0-9)\w{5,20}$', prompt):
+         return prompt
+     else:
+         raise ValueError(message)
