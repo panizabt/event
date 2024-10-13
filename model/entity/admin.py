@@ -1,6 +1,6 @@
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String
-from model.tools.validation import *
+from model.tools.validation import Validator
 
 
 class Admin(Base):
@@ -34,7 +34,7 @@ class Admin(Base):
 
     @name.setter
     def name(self, name):
-        self._name = no_numbers(name, "Invalid Name")
+        self._name = Validator.name_validator(name, "Invalid Name")
 
     @property
     def surname(self):
@@ -42,7 +42,7 @@ class Admin(Base):
 
     @surname.setter
     def surname(self, surname):
-        self._surname = no_numbers(surname, "Invalid Surname")
+        self._surname = Validator.name_validator(surname, "Invalid Surname")
 
     @property
     def username(self):
@@ -50,7 +50,7 @@ class Admin(Base):
 
     @username.setter
     def username(self, username):
-        self._username = no_space(username, "Invalid Username")
+        self._username = Validator.username_validator(username, "Invalid Username")
 
     @property
     def password(self):
@@ -58,7 +58,7 @@ class Admin(Base):
 
     @password.setter
     def password(self, password):
-        self._password = password_validator(password, "Invalid Password")
+        self._password = Validator.password_validator(password, "Invalid Password")
 
     @property
     def access_level(self):
