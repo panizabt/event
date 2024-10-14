@@ -8,7 +8,6 @@ from datetime import datetime
 class Event(Base):
     __tablename__ = "events_tbl"
 
-    
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title_date = Column("title_date", DateTime)
     _start_time = Column("start_time", DateTime)
@@ -23,9 +22,8 @@ class Event(Base):
 
     _salon = Column("salon", String(30), nullable=False)
     salon = relationship("Salon", back_populates="events")
-    
-    def __init__(self, id, title_date, start_time,  end_date_time, event_type, duration, description, price):
-        
+
+    def __init__(self, id, title_date, start_time, end_date_time, event_type, duration, description, price):
         self.id = id
         self.title_date = title_date
         self.start_time = start_time
@@ -34,76 +32,67 @@ class Event(Base):
         self.duration = duration
         self.description = description
         self.price = price
-    
-    
+
     @property
     def id(self):
         return self.id
-    
-    
+
     @id.setter
     def id(self, id):
         self.id = id
-    
-    
+
     @property
     def title_date(self):
         return self.title_date
-    
-    
+
     @title_date.setter
     def title_date(self, title_date):
-        self.title_date = title_date
-
+        self.title_date = Validation.title_date_validator(title_date, "Invalid Title_date")
 
     @property
     def start_time(self):
         return self.start_time
 
-
     @start_time.setter
     def start_time(self, start_time):
-        self.start_time = start_time
-
+        self.start_time = Validation.start_time_validator(start_time, "Invalid start_time")
 
     @property
     def end_date_time(self):
         return self.end_date_time
-    
-    
+
     @end_date_time.setter
     def end_date_time(self, end_date_time):
-        self.end_date_time = end_date_time
-    
-    
+        self.end_date_time = Validation.end_time_validator(end_date_time, "Invalid end_date_time")
+
     @property
     def event_type(self):
         return self.event_type
-    
-    
+
     @event_type.setter
     def event_type(self, event_type):
-        self.event_type = event_type
-    
-    
+        self.event_type = Validation.event_type_validator(event_type, "Invalid event_type")
+
     @property
     def duration(self):
         return self.duration
-    
-    
+
     @duration.setter
     def duration(self, duration):
-        self.duration = duration
-    
-    
+        self.duration = Validation.duration_validator(duration, "Invalid duration")
+
     @property
     def description(self):
         return self.description
-    
-    
+
     @description.setter
     def description(self, description):
-        self.description = description
+        self.description = Validation.description_validator(description, "Invalid description")
 
-
-#test2
+    @property
+    def price(self):
+        return self.price
+    
+    @price.setter
+    def price(self, price):
+        self.price = Validation.price_validator(price, "Invalid price")
