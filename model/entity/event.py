@@ -13,7 +13,7 @@ class Event(Base):
     _start_time = Column("start_time", DateTime)
     _end_date_time = Column("end_date_time", DateTime)
     _event_type = Column("event_type", String(20), nullable=False)
-    _duration = Column("duration", Integer, nullable=False)
+    _duration = Column("duration", String(20), nullable=False)
     _description = Column("description", String(100), nullable=False)
     _price = Column("price", Integer, nullable=False)
 
@@ -92,7 +92,7 @@ class Event(Base):
     @property
     def price(self):
         return self.price
-    
+
     @price.setter
     def price(self, price):
         self.price = Validation.price_validator(price, "Invalid price")
