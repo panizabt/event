@@ -26,7 +26,7 @@ class CustomerView:
      print(selected_item)
 
 
-     def save_click(self):
+    def save_click(self):
         status, message = CustomerController.save(self.name.get(), self.family.get(), self.username.get(), self.password.get(),self.address.get(),self.phone.get(),self.postal_code.get())
         if status:
             msg.showinfo("Save",message)
@@ -63,14 +63,17 @@ class CustomerView:
 
 
         self.id = LabelWithEntry(self.window, "ID", 20, 20, data_type="int", state="readonly")
-        self.title = LabelWithEntry(self.window, "Title", 20, 60)
-        self.week_day = LabelWithEntry(self.window, "Week day", 20, 100)
-        self.start_time= LabelWithEntry(self.window, "Start time", 20, 140)
-        self.start_date= LabelWithEntry(self.window,"Start Date", 20, 180)
-        self.end_time= LabelWithEntry(self.window, "End Date", 20, 220)
+        self.title = LabelWithEntry(self.window, "name", 20, 60)
+        self.week_day = LabelWithEntry(self.window, "family", 20, 100)
+        self.start_time= LabelWithEntry(self.window, "username", 20, 140)
+        self.start_date= LabelWithEntry(self.window,"phone", 20, 180)
+        self.end_time= LabelWithEntry(self.window, "postal_code", 20, 220)
+        self.end_time = LabelWithEntry(self.window, "password", 20, 260)
+        self.end_time = LabelWithEntry(self.window, "address", 20, 290)
 
 
-        self.table = Table(self.window, ["ID", "Title", "Week_day", "Start_date","End_time"], [60, 100, 100, 80, 80], 250, 20,self.table_click)
+
+        self.table = Table(self.window, ["ID", "name", "family", "username","phone","postal_code ", "password"," address"], [60, 100, 100, 80, 80], 250, 20)#,self.table_click)
         self.table.refresh_table(CustomerController.find_all()[1])
 
 
