@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
-
 from controller.event_controller import EventController
 from view.component import LabelWithEntry, Table
 
