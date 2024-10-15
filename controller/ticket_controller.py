@@ -3,7 +3,6 @@ from model.service.ticket_service import TicketService
 from model.tools.decorator import exception_handling
 
 
-
 class TicketController:
 
     @classmethod
