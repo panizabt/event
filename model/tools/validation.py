@@ -72,24 +72,5 @@ class Validator:
             return event_type
         else:
             raise ValueError(message)
-    @staticmethod
-    def name_validator(name, message):
-        if type(name) ==  str and re.match(r"^[a-zA-Z\s]{2,30}$", name):
-            return name
-        else:
-            raise ValueError(message)
 
-    @staticmethod
-    def username_validator(username, message):
-        if type(username) ==  str and re.match(r"^[\w@!#$%^&*\s]{2,30}$", username):
-            return username
-        else:
-            raise ValueError(message)
-
-    @staticmethod
-    def password_validator(password, message):
-        if re.match(r"^[\w@!#$%^&*\s]{2,16}$", password):
-            return password
-        else:
-            raise ValueError(message)
 
