@@ -21,7 +21,7 @@ class Ticket(Base):
     _event_id = Column("event", Integer, ForeignKey("event_tbl.id"))
     event = relationship("Event")
 
-    def __init__(self, id, title, start_date, duration, event, price, payment ,customer_id):
+    def __init__(self, id, title, start_date, duration, event, price, payment, customer_id):
         self.id = id
         self.title = title
         self.start_date = start_date
