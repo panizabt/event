@@ -3,7 +3,7 @@ from model.tools import *
 
 
 class Event(Base):
-    __tablename__ = "events_tbl"
+    __tablename__ = "event_tbl"
 
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title = Column("title_date", String(50))
@@ -14,7 +14,7 @@ class Event(Base):
     _description = Column("description", String(100), nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _ticket = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
+    _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
     ticket = relationship("Ticket", back_populates="event")
 
     _salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
