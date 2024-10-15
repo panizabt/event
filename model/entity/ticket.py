@@ -7,7 +7,7 @@ from model.entity.base import Base
 class Ticket(Base):
     __tablename__ = "ticket_tbl"
 
-    _id = Column(Integer, primary_key=True, autoincrement=True)
+    _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title = Column("title", String(20), nullable=False)
     _start_date = Column("start_date", Date, nullable=False)
     _duration = Column("duration", Integer, nullable=False)
