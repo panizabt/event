@@ -72,3 +72,27 @@ class Validator:
             return event_type
         else:
             raise ValueError(message)
+
+    @staticmethod
+    def payment_type_validator(event_type, message):
+        if re.match(r"^[0-9a-zA-Z\s]{1,10}$", event_type):
+            return event_type
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def payment_amount_validator(payment_amount, message):
+        if type(payment_amount) == float and payment_amount >= 0:
+            return payment_amount
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def payment_discription_validator(payment_discription, message):
+        if re.match(r"^[0-9a-zA-Z\s]{1,30}$", payment_discription):
+            return payment_discription
+        else:
+            raise ValueError(message)
+
+
+
