@@ -9,12 +9,12 @@ from view.component import LabelWithEntry, Table
 class EventView:
     def reset_from(self):
         self.id.set(0)
-        self.title_date.set("")
-        self.start_time.set("")
-        self.end_date_time.set("")
-        self.title_type.set("")
-        self.duration.set(0)
-        self.dscription.set("")
+        self.title_date.set(""),
+        self.start_time.set(""),
+        self.end_date_time.set(""),
+        self.title_type.set(""),
+        self.duration.set(0),
+        self.description.set(""),
         self.price.set(0)
 
 
