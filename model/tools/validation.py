@@ -25,11 +25,35 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
+    def address_validator(address, message):
+        if type(address) == str and re.match(r"^[\wa-zA-Z\s]{2,30}$", address):
+            return address
+        else:
+            raise ValueError(message)
+
+
+
+    @staticmethod
     def password_validator(password, message):
         if re.match(r"^[\w@!#$%^&*\s]{2,16}$", password):
             return password
         else:
             raise ValueError(message)
+
+    @staticmethod
+    def phone_validator(phone, message):
+        if re.match(r"^[\w0-9\s]{2,16}$", phone):
+            return phone
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def postal_code_validator(postal_cod, message):
+        if re.match(r"^[\w0-9\s]{2,16}$", postal_cod):
+            return postal_cod
+        else:
+            raise ValueError(message)
+
 
     @staticmethod
     def address_validator(address, message):
