@@ -1,6 +1,6 @@
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String
-from tools import validation
+from model.tools import validation
 
 
 class Customer(Base):
