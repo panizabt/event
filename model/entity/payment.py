@@ -1,6 +1,6 @@
 
-from model.entity.__init__ import *
-from model.tools.validation.validator import Validator
+from model.entity import *
+from model.tools import *
 
 class Payment(Base):
     __tablename__ = "payment_tbl"
