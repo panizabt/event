@@ -102,5 +102,4 @@ class TicketView:
 
         self.reset_form()
 
-
         win.mainloop()

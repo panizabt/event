@@ -17,7 +17,7 @@ Base.metadata.create_all(engine)
 
 
 AdminController.save("ali","hossieni","ali","ali123", "0001")
-AdminController.save("ali","alipour","ali","ali123", "0001")
+# AdminController.edit("ali","alipour","ali","ali123", "0001")
 
 
 
