@@ -63,9 +63,9 @@ class Validation:
     # --------
 
     @staticmethod
-    def title_date_validator(title_date, message):
-        if type(title_date) == date and re.match(r"^[0-9]$", title_date):
-            return title_date
+    def title_validator(title, message):
+        if type(title) == date and re.match(r"^[0-9]$", title):
+            return title
         else:
             raise ValueError(message)
 

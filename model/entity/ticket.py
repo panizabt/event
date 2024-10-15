@@ -7,19 +7,19 @@ from model.entity.base import Base
 class Ticket(Base):
     __tablename__ = "ticket_tbl"
 
-    _id = Column(Integer, primary_key=True, autoincrement=True)
+    _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title = Column("title", String(20), nullable=False)
     _start_date = Column("start_date", Date, nullable=False)
     _duration = Column("duration", Integer, nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
+    _customer_id = Column("customer_id", Integer, ForeignKey("costumer_tbl.id"))
     customer = relationship("Customer")
 
-    _payment_id = Column("payment", Integer, ForeignKey("payment_tbl.id"))
+    _payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
     payment = relationship("Payment")
 
-    _event_id = Column("event", Integer, ForeignKey("event_tbl.id"))
+    _event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
     event = relationship("Event")
 
     def __init__(self, id, title, start_date, duration, event, price, payment, customer):

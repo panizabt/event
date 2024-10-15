@@ -7,16 +7,16 @@ class EventController:
 
     @classmethod
     @exception_handling
-    def save(cls, title_date, start_time, end_date_time, event_type, duration, description, price):
-            event = Event(None, title_date, start_time, end_date_time, event_type, duration, description, price)
+    def save(cls, title, start_time, end_date_time, event_type, duration, description, price, salon):
+            event = Event(None, title, start_time, end_date_time, event_type, duration, description, price, salon)
             EventService.save(event)
             return  "Event saved"
 
 
     @classmethod
     @exception_handling
-    def edit(cls, id, title_date, start_time, end_date_time, event_type, duration, description, price):
-            event = Event(id, title_date, start_time, end_date_time, event_type, duration, description, price)
+    def edit(cls, id, title, start_time, end_date_time, event_type, duration, description, price):
+            event = Event(id, title, start_time, end_date_time, event_type, duration, description, price, salon)
             EventService.edit(Event)
             return  "Event edited"
 
@@ -37,8 +37,8 @@ class EventController:
 
     @classmethod
     @exception_handling
-    def find_by_title(cls, title_date):
-           return EventService.find_by_title(title_date)
+    def find_by_title(cls, title):
+           return EventService.find_by_title(title)
 
 
     @classmethod
