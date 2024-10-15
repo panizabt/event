@@ -7,14 +7,12 @@ from view.component import LabelWithEntry, Table
 
 
 class CustomerView:
-
-
     def reset_form(self):
         self.id.set(0)
         self.name.set("")
         self.family.set("")
         self.username.set("")
-        self.password.set(0)
+        self.password.set("")
         self.address.set("")
         self.phone.set("")
         self.postal_code("")
@@ -23,11 +21,27 @@ class CustomerView:
 
     @staticmethod
     def table_click(self, selected_item):
-     print(selected_item)
+     def table_click(self, select_item):
+         self.id.set(select_item[0])
+         self.title_date.set(select_item[1])
+         self.start_date.set(select_item[2])
+         self.end_date_time.set(select_item[3])
+         self.title_type.set(select_item[4])
+         self.duration.set(select_item[5])
+         self.description.set(select_item[6])
+         self.price.set(select_item[7])
 
 
     def save_click(self):
-        status, message = CustomerController.save(self.name.get(), self.family.get(), self.username.get(), self.password.get(),self.address.get(),self.phone.get(),self.postal_code.get())
+        status, message = CustomerController.save(
+            self.name.get(),
+            self.family.get(),
+            self.username.get(),
+            self.password.get(),
+            self.address.get(),
+            self.phone.get(),
+            self.postal_code.get()
+        )
         if status:
             msg.showinfo("Save",message)
             self.reset_form()
@@ -37,7 +51,15 @@ class CustomerView:
 
 
     def edit_click(self):
-        status, message =CustomerController.edit(self.name.get(), self.family.get(), self.username.get(), self.password.get(),self.address.get(),self.phone.get(),self.postal_code.get())
+        status, message =CustomerController.edit(
+            self.name.get(),
+            self.family.get(),
+            self.username.get(),
+            self.password.get(),
+            self.address.get(),
+            self.phone.get(),
+            self.postal_code.get()
+        )
         if status:
             msg.showinfo("Edit", message)
             self.reset_form()
@@ -47,7 +69,7 @@ class CustomerView:
 
 
     def remove_click(self):
-        if msg.askyesno("Remove person","Are you sure you want to remove this person?"):
+        if msg.askyesno("Remove person","Are you sure ?"):
             status, message =CustomerController.remove(self.id.get())
             if status:
                 msg.showinfo("Remove", message)
