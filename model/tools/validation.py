@@ -2,6 +2,7 @@ import re
 from datetime import datetime, date
 
 
+
 class Validator:
     @staticmethod
     def name_validator(cls, name, message):
