@@ -6,8 +6,8 @@ class Event(Base):
     __tablename__ = "events_tbl"
 
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
-    _title_date = Column("title_date", DateTime)
-    _start_time = Column("start_time", DateTime)
+    _title = Column("title_date", String(50))
+    _start_date_time = Column("start_date_time", DateTime)
     _end_date_time = Column("end_date_time", DateTime)
     _event_type = Column("event_type", String(20), nullable=False)
     _duration = Column("duration", Integer, nullable=False)
@@ -17,18 +17,19 @@ class Event(Base):
     _ticket = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
     ticket = relationship("Ticket", back_populates="event")
 
-    _salon = Column("salon", String(30), nullable=False)
+    _salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
     salon = relationship("Salon", back_populates="event")
 
-    def __init__(self, id, title_date, start_time, end_date_time, event_type, duration, description, price):
+    def __init__(self, id, title_date, start_date_time, end_date_time, event_type, duration, description, price, salon):
         self.id = id
         self.title_date = title_date
-        self.start_time = start_time
+        self.start_date_time = start_date_time
         self.end_date_time = end_date_time
         self.event_type = event_type
         self.duration = duration
         self.description = description
         self.price = price
+        self.salon = salon
 
     @property
     def id(self):
@@ -39,12 +40,12 @@ class Event(Base):
         self.id = id
 
     @property
-    def title_date(self):
-        return self.title_date
+    def title(self):
+        return self.title
 
-    @title_date.setter
-    def title_date(self, title_date):
-        self.title_date = Validation.title_date_validator(title_date, "Invalid Title_date")
+    @title.setter
+    def title(self, title):
+        self.title = Validation.title_validator(title, "Invalid Title")
 
     @property
     def start_time(self):
