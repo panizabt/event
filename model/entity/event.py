@@ -2,7 +2,7 @@ from sqlalchemy.orm import relationship
 
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String, DateTime
-from model.tools.validation import Validator
+from model.tools.validation import Validation
 from datetime import datetime
 
 

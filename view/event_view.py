@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
-
 from controller.event_controller import EventController
 from view.component import LabelWithEntry, Table
 
@@ -18,7 +17,7 @@ class EventView:
         self.price.set(0)
 
 
-     def table_click(self, select_item):
+    def table_click(self, select_item):
          self.id.set(select_item[0])
          self.title_date.set(select_item[1])
          self.start_date.set(select_item[2])
@@ -29,7 +28,7 @@ class EventView:
          self.price.set(select_item[7])
 
 
-     def save_click(self):
+    def save_click(self):
          status, message = EventController.save(
              self.title_date.get(),
              self.start_date.get(),
@@ -45,7 +44,7 @@ class EventView:
          else:
              msg.showerror('Error', message)
 
-     def edit_click(self):
+    def edit_click(self):
          status, message = EventController.edit(
              self.id.get(),
              self.title_date.get(),
@@ -63,7 +62,7 @@ class EventView:
          else:
              msg.showerror('Error', message)
 
-     def remove_click(self):
+    def remove_click(self):
          if msg.askyesno("Remove Event", "Are you sure?"):
              status, message = EventController.remove(
                  self.id.get())
@@ -73,7 +72,7 @@ class EventView:
              else:
                  msg.showerror('Error', message)
 
-     def __init__(self):
+    def __init__(self):
         win = Tk()
         win.title("Event View")
         win.geometry("800x500")
