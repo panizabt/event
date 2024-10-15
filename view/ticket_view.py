@@ -5,6 +5,7 @@ from controller.ticket_controller import TicketController
 from view.component import LabelWithEntry, Table
 
 
+
 class TicketView:
     def reset_form(self):
         self.id.set(0)

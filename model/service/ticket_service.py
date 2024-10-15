@@ -2,6 +2,7 @@ from model.entity.ticket import Ticket
 from model.repository.crud_repository import CrudRepository
 
 
+
 class TicketService:
     repo = CrudRepository(Ticket)
 

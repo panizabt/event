@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from model.entity.base import Base
 
 
+
 class Ticket(Base):
     __tablename__ = "ticket_tbl"
     _id = Column(Integer, primary_key=True, autoincrement=True)
