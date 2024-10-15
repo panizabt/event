@@ -88,3 +88,4 @@ class Customer(Base):
     @postal_code.setter
     def postal_code(self, postal_code):
         self._postal_code = validation.postal_code_validator(postal_code, "Invalid Postal Code")
+        #111
