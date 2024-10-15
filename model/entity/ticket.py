@@ -12,16 +12,16 @@ class Ticket(Base):
     _duration = Column("duration", Integer, nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _customer_id = Column("customer_id", Integer, ForeignKey("customer.id"))
+    _customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
     customer = relationship("Customer")
 
     _payment_id = Column("payment", Integer, ForeignKey("payment_tbl.id"))
-    payment = relationship("Payment", back_populates="ticket")
+    payment = relationship("Payment")
 
     _event_id = Column("event", Integer, ForeignKey("event_tbl.id"))
     event = relationship("Event")
 
-    def __init__(self, id, title, start_date, duration, event, price, payment ,customer_id):
+    def __init__(self, id, title, start_date, duration, event, price, payment, customer):
         self.id = id
         self.title = title
         self.start_date = start_date
@@ -29,7 +29,7 @@ class Ticket(Base):
         self.event = event
         self.price = price
         self.payment = payment
-        self.customer_id = customer_id
+        self.customer = customer
 
     @property
     def id(self):
@@ -63,13 +63,6 @@ class Ticket(Base):
     def duration(self, duration):
         self._duration = duration
 
-    @property
-    def event(self):
-        return self._event
-
-    @event.setter
-    def event(self, event):
-        self._event = event
 
     @property
     def price(self):
@@ -79,10 +72,3 @@ class Ticket(Base):
     def price(self, price):
         self._price = price
 
-    @property
-    def payment(self):
-        return self._payment
-
-    @payment.setter
-    def payment_relation(self, payment):
-        self._payment = payment

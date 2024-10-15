@@ -1,6 +1,6 @@
 from model.entity.base import Base
 from sqlalchemy import Column, Integer, String
-from tools import validation
+from model.tools import *
 
 
 class Customer(Base):
@@ -39,7 +39,7 @@ class Customer(Base):
 
     @name.setter
     def name(self, name):
-        self._name = validation.name_validator(name, "Invalid Name")
+        self._name = Validation.name_validator(name, "Invalid Name")
 
     @property
     def family(self):
@@ -47,7 +47,7 @@ class Customer(Base):
 
     @family.setter
     def family(self, family):
-        self._family = validation.family_validator(family, "Invalid Family")
+        self._family = Validation.family_validator(family, "Invalid Family")
 
     @property
     def username(self):
@@ -55,7 +55,7 @@ class Customer(Base):
 
     @username.setter
     def username(self, username):
-        self._username = username.username_validator(username, "Invalid Username")
+        self._username = Validation.username_validator(username, "Invalid Username")
 
     @property
     def password(self):
@@ -63,7 +63,7 @@ class Customer(Base):
 
     @password.setter
     def password(self, password):
-        self._password = password.password_validator(password, "Invalid Password")
+        self._password = Validation.password_validator(password, "Invalid Password")
 
     @property
     def address(self):
@@ -88,6 +88,3 @@ class Customer(Base):
     @postal_code.setter
     def postal_code(self, postal_code):
         self._postal_code = postal_code.postal_code_validator(postal_code, "Invalid Postal Code")
-
-
-
