@@ -15,8 +15,8 @@ class CustomerController:
 
     @classmethod
     @exception_handling
-    def edit(cls, id, name, family,password,address,phone,postal_code):
-        customer = Customer(id, name, family, password, address, phone, postal_code)
+    def edit(cls, id, name, family,username,password,address,phone,postal_code):
+        customer = Customer(id, name, family,username, password, address, phone, postal_code)
         CustomerService.edit(customer)
         return  "Customer Edited"
 

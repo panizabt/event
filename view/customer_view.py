@@ -3,6 +3,7 @@ from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from controller.customer_controller import CustomerController
+#from controller import customer_controller as CustomerController
 from view.component import LabelWithEntry, Table
 
 
@@ -81,7 +82,7 @@ class CustomerView:
     def __init__(self):
         self.window =Tk()
         self.window.geometry('600x400')
-        self.window.title("Lesson Management")
+        self.window.title("Customer")
 
 
         self.id = LabelWithEntry(self.window, "ID", 20, 20, data_type="int", state="readonly")
