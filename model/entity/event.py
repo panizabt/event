@@ -18,11 +18,11 @@ class Event(Base):
     _description = Column("description", String(100), nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _ticket = Column("ticket", Integer, nullable=False)
-    ticket = relationship("Ticket", back_populates="events")
-
-    _salon = Column("salon", String(30), nullable=False)
-    salon = relationship("Salon", back_populates="events")
+    # _ticket = Column("ticket", Integer, nullable=False)
+    # ticket = relationship("Ticket", back_populates="events")
+    #
+    # _salon = Column("salon", String(30), nullable=False)
+    # salon = relationship("Salon", back_populates="events")
 
     def __init__(self, id, title_date, start_time, end_date_time, event_type, duration, description, price):
         self.id = id
