@@ -1,6 +1,4 @@
-from datetime import datetime
-
-from model.entity.ticket import Ticket
+from model.entity import *
 from model.service.ticket_service import TicketService
 from controller.ticket_controller import TicketController
 
