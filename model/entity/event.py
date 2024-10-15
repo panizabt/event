@@ -1,9 +1,5 @@
-from sqlalchemy.orm import relationship
-
-from model.entity.base import Base
-from sqlalchemy import Column, Integer, String, DateTime
-from model.tools.validation import Validation
-from datetime import datetime
+from model.entity import *
+from model.tools import *
 
 
 class Event(Base):
@@ -18,11 +14,11 @@ class Event(Base):
     _description = Column("description", String(100), nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _ticket = Column("ticket", Integer, nullable=False)
-    ticket = relationship("Ticket", back_populates="events")
+    _ticket = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
+    ticket = relationship("Ticket", back_populates="event")
 
     _salon = Column("salon", String(30), nullable=False)
-    salon = relationship("Salon", back_populates="events")
+    salon = relationship("Salon", back_populates="event")
 
     def __init__(self, id, title_date, start_time, end_date_time, event_type, duration, description, price):
         self.id = id
