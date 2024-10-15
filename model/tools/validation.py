@@ -118,4 +118,27 @@ class Validation:
         else:
             raise ValueError(message)
 
+    @staticmethod
+    def payment_amount_validator(amount, message):
+        if type(amount) == int and amount > 0:
+            return amount
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def payment_type_validator(type, message):
+        if type == "cash" or type == "card" or type == "credit":
+            return type
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def payment_description_validator(cls, description, message):
+        if re.match(r"^[0-9a-zA-Z\s]{1,30}$", description):
+            return description
+        else:
+            raise ValueError(message)
+
+
+
 

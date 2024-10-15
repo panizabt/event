@@ -35,7 +35,7 @@ class Payment(Base):
 
     @amount.setter
     def amount(self, amount):
-        self._amount = validation.payment_amount_validator(amount,"invalid payment amount")
+        self._amount = Validation.payment_amount_validator(amount,"invalid payment amount")
 
     @property
     def date_time(self):
@@ -51,7 +51,7 @@ class Payment(Base):
 
     @payment_type.setter
     def payment_type(self, payment_type):
-        self._payment_type = validation.payment_type_validator(payment_type,"Invalid payment type")
+        self._payment_type = Validation.payment_type_validator(type,"Invalid payment type")
 
     @property
     def description(self):
@@ -59,7 +59,7 @@ class Payment(Base):
 
     @description.setter
     def description(self, description):
-        self._description = validation.payment_description_validator(description, "Invalid description")
+        self._description = Validation.payment_description_validator(description, "Invalid description")
 
 #test
 
