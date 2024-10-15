@@ -6,6 +6,7 @@ from model.entity.base import Base
 
 class Ticket(Base):
     __tablename__ = "ticket_tbl"
+
     _id = Column(Integer, primary_key=True, autoincrement=True)
     _title = Column("title", String(20), nullable=False)
     _start_date = Column("start_date", Date, nullable=False)
@@ -63,7 +64,6 @@ class Ticket(Base):
     def duration(self, duration):
         self._duration = duration
 
-
     @property
     def price(self):
         return self._price
@@ -71,4 +71,3 @@ class Ticket(Base):
     @price.setter
     def price(self, price):
         self._price = price
-

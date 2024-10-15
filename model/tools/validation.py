@@ -67,14 +67,14 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def description_validator(description, message):
+    def description_validator(cls,description, message):
         if re.match(r"^[0-9a-zA-Z\s]{1,30}$", description):
             return description
         else:
             raise ValueError(message)
 
     @staticmethod
-    def duration_validator(duration, message):
+    def duration_validator(cls,duration, message):
         if re.match(r"^[0-9a-zA-Z\s]{1,20}$", duration):
             return duration
         else:

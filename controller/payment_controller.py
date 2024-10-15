@@ -1,6 +1,6 @@
-from model.entity.payment import Payment
+from model.entity import *
 from model.service.payment_service import PaymentService
-from model.tools.decorator import exception_handling
+from model.tools.decorator import *
 
 
 class PaymentController:
