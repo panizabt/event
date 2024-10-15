@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
 from datetime import datetime
 from sqlalchemy.orm import relationship
 from model.entity.base import Base
-from model.tools.validation import Validator
+from model.tools.validation import Validation
 
 class Payment(Base):
     __tablename__ = "payment_tbl"

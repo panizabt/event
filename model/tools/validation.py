@@ -2,7 +2,7 @@ import re
 from datetime import datetime, date
 
 
-class Validator:
+class Validation:
     @staticmethod
     def name_validator(cls, name, message):
         if type(name) == str and re.match(r"^[a-zA-Z\s]{2,30}$", name):
