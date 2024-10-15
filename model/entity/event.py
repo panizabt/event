@@ -20,9 +20,9 @@ class Event(Base):
     _salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
     salon = relationship("Salon", back_populates="event")
 
-    def __init__(self, id, title_date, start_date_time, end_date_time, event_type, duration, description, price, salon):
+    def __init__(self, id, title, start_date_time, end_date_time, event_type, duration, description, price, salon):
         self.id = id
-        self.title_date = title_date
+        self.title = title
         self.start_date_time = start_date_time
         self.end_date_time = end_date_time
         self.event_type = event_type
