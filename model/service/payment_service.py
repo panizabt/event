@@ -1,4 +1,4 @@
-from model.entity.payment import Payment
+from model.entity import *
 from model.repository.crud_repository import CrudRepository
 
 
