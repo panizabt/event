@@ -96,7 +96,7 @@ class CustomerView:
 
 
 
-        self.table = Table(self.window, ["ID", "name", "family", "username","phone","postal_code ", "password"," address"], [60, 100, 100, 80, 80], 250, 20)#,self.table_click)
+        self.table = Table(self.window, ["ID", "name", "family", "username","phone","postal_code ", "password"," address"], [60, 100, 100, 80, 80], 250, 20,self.table_click)
         self.table.refresh_table(CustomerController.find_all()[1])
 
 
