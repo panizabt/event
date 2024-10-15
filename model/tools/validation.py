@@ -11,6 +11,13 @@ class Validator:
             raise ValueError(message)
 
     @staticmethod
+    def family_validator(family, message):
+        if type(family) == str and re.match(r"^[a-zA-Z\s]{2,30}$", family):
+            return family
+        else:
+            raise ValueError(message)
+
+    @staticmethod
     def username_validator(username, message):
         if type(username) ==  str and re.match(r"^[\w@!#$%^&*\s]{2,30}$", username):
             return username
@@ -25,7 +32,7 @@ class Validator:
             raise ValueError(message)
 
     @staticmethod
-    def address_validator(cls, address, message):
+    def address_validator(address, message):
         if type(address) == str and re.match(r"^[a-zA-Z\s]{2,30}$", address):
             return(address)
 #--------
