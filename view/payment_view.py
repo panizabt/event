@@ -20,7 +20,7 @@ class PaymentView:
         print(selected_item)
 
     def save_record(self):
-        status, message = PaymentController.save(self.amount.get(), self.person.get(),
+        status, message = PaymentController.save(self.amount.get(), self.date.get(),
                                                  self.payment_type.get(), self.description.get())
         if status:
             msg.showinfo("Saved.", message)
@@ -38,7 +38,7 @@ class PaymentView:
                 msg.showerror("Remove Error!", message)
 
     def edit_record(self):
-        status, message = PaymentController.edit(self.id.get(), self.amount.get(), self.person.get(),
+        status, message = PaymentController.edit(self.id.get(), self.amount.get(), self.date.get(),
                                                  self.payment_type.get(), self.description.get())
         if status:
             msg.showinfo("Edited.", message)
@@ -47,7 +47,7 @@ class PaymentView:
             msg.showerror("Edit Error!", message)
 
     def find_record(self):
-        status, message = PaymentController.edit(self.id.get(), self.amount.get(), self.person.get(),
+        status, message = PaymentController.edit(self.id.get(), self.amount.get(), self.date.get(),
                                                  self.payment_type.get(), self.description.get())
         if status:
             msg.showinfo("found.", message)
@@ -65,12 +65,12 @@ class PaymentView:
         win.geometry("650x400")
 
         self.id = LabelWithEntry(win, "Id", 20, 100, data_type="int", state= "readonly")
-        self.account = LabelWithEntry(win, "Account", 20, 20, data_type= "str")
+        self.payment_type = LabelWithEntry(win, "Account", 20, 20, data_type= "str")
         self.amount = LabelWithEntry(win, "Amount", 20, 60, data_type= "int")
         self.date = LabelWithEntry(win, "Date", 20, 140, data_type= "datetime", state= "readonly")
-        self.person = LabelWithEntry(win, "Person", 20, 180, data_type= "str")
+        self.description = LabelWithEntry(win, "Person", 20, 180, data_type= "str")
 
-        self.table = Table(win, ["Id", "Account", "Amount", "Date", "Person"],[60, 100, 100, 60, 60], 250, 20, self.table_click)
+        self.table = Table(win, ["Id", "Amount", "Date","payment Type", "description"],[60, 100, 100, 60, 60], 250, 20, self.table_click)
         self.table.refresh_table(PaymentController.find_all()[1])
 
         self.table = ttk.Treeview(win, columns=(1, 2, 3, 4, 5), show="headings")
