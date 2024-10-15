@@ -1,9 +1,5 @@
-from sqlalchemy.orm import relationship
-
-from model.entity.base import Base
-from sqlalchemy import Column, Integer, String, DateTime
+from model.entity import*
 from model.tools.validation import Validation
-from datetime import datetime
 
 
 class Event(Base):
