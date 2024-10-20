@@ -4,7 +4,7 @@ from model.tools import *
 
 
 class Customer(Base):
-    __tablename__ = "costumer_tbl"
+    __tablename__ = "customer_tbl"
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _name = Column("name", String(20), nullable=False)
     _family = Column("family", String(20), nullable=False)
