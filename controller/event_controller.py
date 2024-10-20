@@ -47,7 +47,7 @@ class EventController:
            return  EventService.find_by_date_time(start_date_time)
 
 
-    # todo : error
+
     @classmethod
     @exception_handling
     def find_by_salon(cls, salon_id):

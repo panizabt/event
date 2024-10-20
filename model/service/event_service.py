@@ -36,6 +36,3 @@ class EventService:
     @classmethod
     def find_by_salon(cls, salon_id):
        return cls.repo.find_by(Event._salon_id == salon_id)
-
-
-#test2
