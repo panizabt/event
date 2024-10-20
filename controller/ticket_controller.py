@@ -1,70 +1,50 @@
 from model.entity.ticket import Ticket
 from model.service.ticket_service import TicketService
+from model.tools.decorator import exception_handling
+
 
 class TicketController:
 
     @classmethod
-    def save(cls, title, start_time, duration, event, price, payment, customer_id):
-        try:
-            ticket = Ticket(None, title, start_time, duration, event, price, payment, customer_id)
-            TicketService.save(ticket)
-            return True, "Ticket saved"
-        except Exception as e:
-            return False, str(e)
+    @exception_handling
+    def save(cls, title, start_date, duration, event, price, payment, customer_id):
+        ticket = Ticket(None, title, start_date, duration, event, price, payment, customer_id)
+        TicketService.save(ticket)
+        return "Ticket Saved"
 
     @classmethod
-    def edit(cls, ticket_id, title, start_time, duration, event, price, payment, customer_id):
-        try:
-            ticket = Ticket(ticket_id, title, start_time, duration, event, price, payment, customer_id)
-            TicketService.edit(ticket)
-            return True, "Ticket edited"
-        except Exception as e:
-            return False, str(e)
+    @exception_handling
+    def edit(cls, id, title, start_date, duration, event, price, payment, customer_id):
+        ticket = Ticket(id, title, start_date, duration, event, price, payment, customer_id)
+        TicketService.edit(ticket)
+        return "Ticket Edited"
 
     @classmethod
-    def remove(cls, ticket_id):
-        try:
-            TicketService.remove(ticket_id)
-            return True, "Ticket Removed"
-        except Exception as e:
-            return False, str(e)
+    @exception_handling
+    def remove(cls, id):
+        TicketService.remove(id)
+        return "Ticket Removed"
 
     @classmethod
+    @exception_handling
     def find_all(cls):
-        try:
-            return True, TicketService.find_all()
-        except Exception as e:
-            return False, str(e)
+        tickets = TicketService.find_all()
+        return True, tickets
 
     @classmethod
-    def find_by_id(cls, ticket_id):
-        try:
-            ticket = TicketService.find_by_id(ticket_id)
-            if ticket:
-                return True, ticket
-            else:
-                return False, "Ticket not found"
-        except Exception as e:
-            return False, str(e)
+    @exception_handling
+    def find_by_id(cls, id):
+        ticket = TicketService.find_by_id(id)
+        return True, ticket
 
     @classmethod
+    @exception_handling
     def find_by_customer(cls, customer_id):
-        try:
-            tickets = TicketService.find_by_customer(customer_id)
-            if tickets:
-                return True, tickets
-            else:
-                return False, "No tickets found for this customer"
-        except Exception as e:
-            return False, str(e)
+        tickets = TicketService.find_by_customer(customer_id)
+        return True, tickets
 
     @classmethod
+    @exception_handling
     def find_by_event(cls, event_id):
-        try:
-            tickets = TicketService.find_by_event(event_id)
-            if tickets:
-                return True, tickets
-            else:
-                return False, "No tickets found for this event"
-        except Exception as e:
-            return False, str(e)
+        tickets = TicketService.find_by_event(event_id)
+        return True, tickets

@@ -1,7 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
-from datetime import datetime
-from sqlalchemy.orm import relationship
-from model.entity.base import Base
+
+from model.entity import *
+from model.tools import *
 
 class Payment(Base):
     __tablename__ = "payment_tbl"
@@ -36,7 +35,7 @@ class Payment(Base):
 
     @amount.setter
     def amount(self, amount):
-        self._amount = amount
+        self._amount = Validation.payment_amount_validator(amount,"invalid payment amount")
 
     @property
     def date_time(self):
@@ -52,7 +51,7 @@ class Payment(Base):
 
     @payment_type.setter
     def payment_type(self, payment_type):
-        self._payment_type = payment_type
+        self._payment_type = Validation.payment_type_validator(payment_type,"Invalid payment type")
 
     @property
     def description(self):
@@ -60,7 +59,7 @@ class Payment(Base):
 
     @description.setter
     def description(self, description):
-        self._description = description
+        self._description = Validation.payment_description_validator(description, "Invalid description")
 
 #test
 
