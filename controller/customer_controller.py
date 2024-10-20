@@ -8,7 +8,7 @@ class CustomerController:
     @classmethod
     @exception_handling
     def save(cls, name, family , username , password,address,phone,postal_code):
-        customer = Customer( name, family, username, password, address, phone, postal_code)
+        customer = Customer( None,name, family, username, password, address, phone, postal_code)
         CustomerService.save(customer)
         return "Customer Saved"
 

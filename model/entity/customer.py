@@ -12,8 +12,8 @@ class Customer(Base):
     _username = Column("username", String(20), nullable=False)
     _password = Column("password", String(255), nullable=False)
     _address = Column("address", String(255), nullable=False)
-    _phone = Column("phone", Integer, nullable=False)
-    _postal_code = Column("postal_code", Integer, nullable=False)
+    _phone = Column("phone", String(11), nullable=False)
+    _postal_code = Column("postal_code", String(11), nullable=False)
 
 
 
@@ -74,7 +74,7 @@ class Customer(Base):
 
     @address.setter
     def address(self, address):
-        self._address = Validation.address_validator(address, "Invalid Address")
+        self._address = address #todo:error Validation.address_validator(address, "Invalid Address")
 
     @property
     def phone(self):
@@ -82,7 +82,7 @@ class Customer(Base):
 
     @phone.setter
     def phone(self, phone):
-        self._phone = Validation.phone_validator(phone, "Invalid Phone")
+        self._phone = phone #todo:error Validation.phone_validator(phone, "Invalid Phone")
 
     @property
     def postal_code(self):
@@ -90,4 +90,4 @@ class Customer(Base):
 
     @postal_code.setter
     def postal_code(self, postal_code):
-        self._postal_code = Validation.postal_code_validator(postal_code, "Invalid Postal Code")
+        self._postal_code = postal_code #todo:error Validation.postal_code_validator(postal_code, "Invalid Postal Code")
