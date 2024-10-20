@@ -68,7 +68,7 @@ class PaymentView:
         self.payment_type = LabelWithEntry(win, "Account", 20, 20, data_type= "str")
         self.amount = LabelWithEntry(win, "Amount", 20, 60, data_type= "int")
         self.date = LabelWithEntry(win, "Date", 20, 140, data_type= "datetime", state= "readonly")
-        self.description = LabelWithEntry(win, "Person", 20, 180, data_type= "str")
+        self.description = LabelWithEntry(win, "Description", 20, 180, data_type= "str")
 
         self.table = Table(win, ["Id", "Amount", "Date","payment Type", "description"],[60, 100, 100, 60, 60], 250, 20, self.table_click)
         self.table.refresh_table(PaymentController.find_all()[1])
