@@ -19,6 +19,8 @@ Base.metadata.create_all(engine)
 CustomerController.save("reza","rezaii","rez","reza123",
                         "shargh",123456788,12345677)
 
+#CustomerController.edit(1,"hassan")
+
 #CustomerController.edit(1,"hassan","rezaii","rez","reza123",
                #         "shargh",123456788,12345677)
 
