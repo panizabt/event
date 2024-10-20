@@ -13,16 +13,16 @@ if not database_exists(connection_string):
 
 engine = create_engine(connection_string)
 
-Base.metadata.drop_all(engine)
+#Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
 # test : error
 start_date = datetime(2024, 11, 12, 20, 17, 30)
 # ticket = Ticket(None, "title", start_date, 15, None, 10000, None, None)
 
-#TicketController.save("concert", start_date, 90, "concert music", 1000000, "Credit Card", 111)
+TicketController.save("concert", start_date, 90, "concert music", 1000000, "Credit Card", 111)
 
-TicketController.edit("concert", start_date, 90, "concert music", 1000000, "Credit Card", 111)
+#TicketController.edit("concert", "concert",  start_date, 90, "Concert music", 1000000, "Credit Card", 111)
 
 #TicketController.remove(1)
 
