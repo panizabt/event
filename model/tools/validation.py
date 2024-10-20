@@ -127,7 +127,7 @@ class Validation:
 
     @staticmethod
     def payment_type_validator(type, message):
-        if type(type) == str and re.match(r"^[0-9a-zA-Z\s]{1,15}$", type):
+        if type(type) == str and re.match(r"^[a-zA-Z\s]{1,15}$", type):
             return type
         else:
             raise ValueError(message)
