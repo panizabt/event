@@ -30,12 +30,12 @@ class EventService:
         return cls.repo.find_by_title(title)
 
     @classmethod
-    def find_by_date_time(cls, date_time):
-        return cls.repo.date_time(date_time)
+    def find_by_date_time(cls, start_date_time):
+        return cls.repo.date_time(start_date_time)
 
     @classmethod
-    def find_by_salon(cls, salon):
-       return cls.repo.find_by_salon(salon)
+    def find_by_salon(cls, salon_id):
+       return cls.repo.find_by_salon(salon_id)
 
 
 #test2
