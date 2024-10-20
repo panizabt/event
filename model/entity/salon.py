@@ -9,7 +9,7 @@ class Salon(Base):
     _location= Column("location", String(100))
     _capacity = Column("capacity", Integer)
     _description = Column("description", String(100))
-    _is_available= Column("is_Available", Boolean)
+    _is_available= Column("is_available", Boolean)
 
 
     def __init__(self, id, title,location,capacity,description, is_available):

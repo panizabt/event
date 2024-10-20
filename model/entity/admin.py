@@ -4,12 +4,12 @@ from model.tools import Validation
 
 class Admin(Base):
     __tablename__ = "admin_tbl"
-    _id = Column(Integer, primary_key=True, autoincrement=True)
-    _name = Column(String(20), nullable=False)
-    _surname = Column(String(20), nullable=False)
-    _username = Column(String(20), nullable=False)
-    _password = Column(String(20), nullable=False)
-    _access_level = Column(String(10), nullable=False)
+    _id = Column("id",Integer, primary_key=True, autoincrement=True)
+    _name = Column("name",String(20), nullable=False)
+    _surname = Column("surname",String(20), nullable=False)
+    _username = Column("username",String(20), nullable=False)
+    _password = Column("password",String(20), nullable=False)
+    _access_level = Column("access_level",String(10), nullable=False)
 
     def __init__(self, id, name, surname, username, password, access_level):
         self.id = id
