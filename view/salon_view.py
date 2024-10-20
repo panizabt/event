@@ -8,38 +8,58 @@ from  controller.salon_controller import SalonController
 class SalonView:
     def resert(self):
         self.id.set(0)
-        self.title(0)
+        self.title.set("")
         self.location.set("")
-        self.capacity("")
-        self.availability("")
+        self.capacity.set(0)
+        self.availability.set("")
 
     @staticmethod
-    def table_click(selected_item):
-        print(selected_item)
+    def table_click(self,selected_item):
+        self.id.set(selected_item[0])
+        self.title.set(selected_item[1])
+        self.location.set(selected_item[2])
+        self.capacity.set(selected_item[3])
+        self.availability.set(selected_item[4])
 
-    def save_record(self):
-        status, message = SalonController.save(self.amount.get(), self.date.get(),
-                                                 self.salon_type.get(), self.description.get())
+
+    def save_click(self):
+
+        status,message=SalonController.edit(
+            self.id.get(),
+            self.title.get(),
+            self.location.get(),
+            self.capacity.get(),
+            self.availability.get(),
+        )
         if status:
-            msg.showinfo("Saved.", message)
+            msg.showinfo("Salon Saved",message)
             self.reset_form()
         else:
-            msg.showerror("Save Error!", message)
+            msg.showerror("Salon Save",message)
 
-    def remove_record(self):
-        if msg.askyesno("Remove Salon!", "Are you sure?"):
-            status, message = SalonController.remove(self.id.get())
+    def edit_click(self):
+        status, message = SalonController.save(
+            self.id.get(),
+            self.title.get(),
+            self.location.get(),
+            self.capacity.get(),
+            self.availability.get(),
+        )
+        if status:
+            msg.showinfo("Salon Edited", message)
+            self.reset_form()
+        else:
+            msg.showerror("Edit Error", message)
+
+    def remove_click(self):
+        if msg.askyesno("Remove Salon?","Are you sure?"):
+            status, message=SalonController.remove(self.id.get())
             if status:
-                msg.showinfo("Removed.", message)
-                self.reset_form()
-            else:
-                msg.showerror("Remove Error!", message)
+                msg.showinfo("Salon Removed",message)
+                self.resert_form()
 
-    def edit_record(self):
-        status, message = SalonController.edit(self.id.get(), self.amount.get(), self.date.get(),
-                                                 self.salon_type.get(), self.description.get())
-        if status:
-            msg.showinfo("Edited.", message)
-            self.reset_form()
-        else:
-            msg.showerror("Edit Error!", message)
+            else:
+                msg.showerror("Salon Remove",message)
+
+
+

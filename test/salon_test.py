@@ -17,3 +17,4 @@ Base.metadata.create_all(engine)
 
 
 SalonController.save(1,"aria","teh",300,"fgded",True)
+SalonController.edit()
