@@ -17,7 +17,7 @@ class Ticket(Base):
     customer = relationship("Customer")
 
     _payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
-    payment = relationship("Payment")
+    payment = relationship("Payment",back_populates="tickets")
 
     _event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
     event = relationship("Event")
