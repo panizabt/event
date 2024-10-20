@@ -7,16 +7,17 @@ class EventController:
 
     @classmethod
     @exception_handling
-    def save(cls, title, start_time, end_date_time, event_type, duration, description, price, salon):
-            event = Event(None, title, start_time, end_date_time, event_type, duration, description, price, salon)
+    def save(cls, title, start_date_time, end_date_time, event_type, duration, description, price, salon):
+            event = Event(None, title, start_date_time, end_date_time, event_type, duration, description, price, salon)
+            print(event)
             EventService.save(event)
             return  "Event saved"
 
 
     @classmethod
     @exception_handling
-    def edit(cls, id, title, start_time, end_date_time, event_type, duration, description, price):
-            event = Event(id, title, start_time, end_date_time, event_type, duration, description, price, salon)
+    def edit(cls, id, title, start_date_time, end_date_time, event_type, duration, description, price):
+            event = Event(id, title, start_date_time, end_date_time, event_type, duration, description, price, salon)
             EventService.edit(Event)
             return  "Event edited"
 
@@ -24,8 +25,7 @@ class EventController:
     @classmethod
     @exception_handling
     def remove(cls, id):
-            event = Event(id)
-            EventService.remove(event)
+            EventService.remove(id)
             return True, "Event removed"
 
 
@@ -44,9 +44,11 @@ class EventController:
     @classmethod
     @exception_handling
     def find_by_date_time(cls, start_date_time, end_date_time):
+           # todo : error
            return  EventService.find_by_date_time(start_date_time, end_date_time)
 
 
+    # todo : error
     @classmethod
     @exception_handling
     def find_by_salon(cls, description):
