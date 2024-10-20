@@ -43,17 +43,17 @@ class EventController:
 
     @classmethod
     @exception_handling
-    def find_by_date_time(cls, start_date_time, end_date_time):
-           # todo : error
-           return  EventService.find_by_date_time(start_date_time, end_date_time)
+    def find_by_date_time(cls, start_date_time):
+           return  EventService.find_by_date_time(start_date_time)
 
 
     # todo : error
     @classmethod
     @exception_handling
-    def find_by_salon(cls, description):
-     return EventService.find_by_salon(description)
-    #T
+    def find_by_salon(cls, salon_id):
+        return EventService.find_by_salon(salon_id)
+
+
 
 
 
