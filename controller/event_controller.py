@@ -1,6 +1,6 @@
-from model.entity.event import Event
+from model.entity import *
 from model.service.event_service import EventService
-from model.tools.decorator import exception_handling
+from model.tools.decorator import *
 
 
 class EventController:
@@ -43,16 +43,17 @@ class EventController:
 
     @classmethod
     @exception_handling
-    def find_by_date_time(cls, start_date_time, end_date_time):
-           # todo : error
-           return  EventService.find_by_date_time(start_date_time, end_date_time)
+    def find_by_date_time(cls, start_date_time):
+           return  EventService.find_by_date_time(start_date_time)
 
 
     # todo : error
     @classmethod
     @exception_handling
-    def find_by_salon(cls, description):
-     return EventService.find_by_salon(description)
+    def find_by_salon(cls, salon_id):
+        return EventService.find_by_salon(salon_id)
+
+
 
 
 
