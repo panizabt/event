@@ -15,6 +15,8 @@ class Customer(Base):
     _postal_code = Column("postal_code", Integer, nullable=False)
 
 
+
+
     def __init__(self, id, name, family, username, password, address, phone, postal_code):
         self.id = id
         self.name = name
