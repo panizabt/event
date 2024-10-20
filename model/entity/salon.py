@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer,  String, Boolean
-from model.entity.base import Base
+
+from model.tools import*
 
 class Salon(Base):
     __tablename__ = "salon_tbl"
