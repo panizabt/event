@@ -133,7 +133,7 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def payment_description_validator(cls, description, message):
+    def payment_description_validator(description, message):
         if re.match(r"^[0-9a-zA-Z\s]{1,30}$", description):
             return description
         else:

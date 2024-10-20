@@ -31,6 +31,8 @@ class CrudRepository:
 
     def remove(self, id):
         entity = session.get(self.class_name, id)
+        if not entity:
+            raise ValueError(f"{self.class_name.__name__} by id {id} not found")
         session.delete(entity)
         session.commit()
         return entity
