@@ -51,7 +51,7 @@ class Payment(Base):
 
     @payment_type.setter
     def payment_type(self, payment_type):
-        self._payment_type = Validation.payment_type_validator(type,"Invalid payment type")
+        self._payment_type = Validation.payment_type_validator(payment_type,"Invalid payment type")
 
     @property
     def description(self):

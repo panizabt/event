@@ -1,4 +1,4 @@
-from git import repo
+
 
 from model.entity.salon import Salon
 from model.repository.crud_repository import CrudRepository
@@ -32,5 +32,9 @@ class SalonService:
 
     @classmethod
     def have_capacity(cls,capacity):
-        cls.repo.find_by(Salon._capacity == capacity)
+        cls.repo.find_by(Salon._capacity >= capacity)
+
+    @classmethod
+    def find_by_available(cls, is_available):
+        cls.repo.find_by(Salon._is_available == is_available)
 
