@@ -4,7 +4,8 @@ from model.tools import *
 
 
 class Customer(Base):
-    __tablename__ = "costumer_tbl"
+    __tablename__ = "customer_tbl"
+
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _name = Column("name", String(20), nullable=False)
     _family = Column("family", String(20), nullable=False)
@@ -13,6 +14,8 @@ class Customer(Base):
     _address = Column("address", String(255), nullable=False)
     _phone = Column("phone", Integer, nullable=False)
     _postal_code = Column("postal_code", Integer, nullable=False)
+
+
 
 
     def __init__(self, id, name, family, username, password, address, phone, postal_code):
