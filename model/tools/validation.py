@@ -71,35 +71,35 @@ class Validation:
 
     @staticmethod
     def start_time_validator(start_time, message):
-        if type(start_time) == date and re.match(r"^[0-9]$", start_time):
+        if type(start_time) == datetime:
             return start_time
         else:
             raise ValueError(message)
 
     @staticmethod
     def end_time_validator(end_date_time, message):
-        if type(end_date_time) == date and re.match(r"^[0-9]$", end_date_time):
+        if type(end_date_time) == datetime:
             return end_date_time
         else:
             raise ValueError(message)
 
     @staticmethod
     def price_validator(price, message):
-        if type(price) == int and re.match(r"^[0-9]{1,20}$", price):
+        if type(price) == int and price>0:
             return price
         else:
             raise ValueError(message)
 
     @staticmethod
-    def description_validator(cls,description, message):
-        if re.match(r"^[0-9a-zA-Z\s]{1,30}$", description):
+    def description_validator(description, message):
+        if re.match(r"^[0-9a-zA-Z\s]{1,100}$", description):
             return description
         else:
             raise ValueError(message)
 
     @staticmethod
-    def duration_validator(cls,duration, message):
-        if re.match(r"^[0-9a-zA-Z\s]{1,20}$", duration):
+    def duration_validator(duration, message):
+        if type(duration) == int and duration > 0:
             return duration
         else:
             raise ValueError(message)
