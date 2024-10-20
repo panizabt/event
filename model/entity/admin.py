@@ -1,5 +1,5 @@
 from model.entity import *
-from model.tools import Validation
+from model.tools import *
 
 
 class Admin(Base):
