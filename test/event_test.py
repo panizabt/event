@@ -28,3 +28,4 @@ EventController.save("Concert ali",  s_t, e_t, "Consert", 120, "lotfan 2 saat zo
 #EventController.remove(1)
 #EventController.find_all()
 #EventController.find_by_title("Film Reza")
+#test
