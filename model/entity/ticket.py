@@ -13,14 +13,14 @@ class Ticket(Base):
     _duration = Column("duration", Integer, nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    _customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
-    customer = relationship("Customer")
+    #_customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
+    #customer = relationship("Customer")
 
-    _payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
-    payment = relationship("Payment",back_populates="tickets")
+    #_payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
+    #payment = relationship("Payment",back_populates="tickets")
 
-    _event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
-    event = relationship("Event")
+    #_event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
+    #event = relationship("Event")
 
     def __init__(self, id, title, start_date, duration, event, price, payment, customer):
         self.id = id
