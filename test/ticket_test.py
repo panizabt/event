@@ -16,7 +16,7 @@ engine = create_engine(connection_string)
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
-
+# test : error
 start_date = datetime(2024, 11, 12, 20, 17, 30)
 # ticket = Ticket(None, "title", start_date, 15, None, 10000, None, None)
 

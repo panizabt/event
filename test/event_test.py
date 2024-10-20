@@ -18,6 +18,8 @@ engine = create_engine(connection_string)
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
+
+# todo : error
 s_t = datetime(2024,5,23,18,0,0)
 e_t = datetime(2024,5,23,20,0,0)
 EventController.save("Concert ali",  s_t, e_t, "Consert", 120, "lotfan 2 saat zod tar hozor peyda konid", 650000, None)

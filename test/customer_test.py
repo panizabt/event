@@ -12,5 +12,6 @@ engine = create_engine(connection_string)
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
+# todo : error
 CustomerController.save("ali","abedi","aliiiabedi","ali123",
                         "gharb",123456789,12345678)

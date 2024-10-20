@@ -18,6 +18,7 @@ engine = create_engine(connection_string)
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
 
+# todo : error
 d_t = datetime(2024,11,12,20,17,30)
 PaymentController.save(10000, d_t, "income", "Desc")
 
