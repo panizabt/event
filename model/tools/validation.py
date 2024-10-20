@@ -42,15 +42,15 @@ class Validation:
 
     @staticmethod
     def phone_validator(phone, message):
-        if re.match(r"^[\w0-9\s]{2,16}$", phone):
+        if re.match(r"^[\w\s]{2,16}$", phone):
             return phone
         else:
             raise ValueError(message)
 
     @staticmethod
-    def postal_code_validator(postal_cod, message):
-        if re.match(r"^[\w0-9\s]{2,16}$", postal_cod):
-            return postal_cod
+    def postal_code_validator(postal_code, message):
+        if re.match(r"^[\w0-9\s]{2,16}$", postal_code):
+            return postal_code
         else:
             raise ValueError(message)
 
@@ -133,7 +133,7 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def payment_description_validator(cls, description, message):
+    def payment_description_validator(description, message):
         if re.match(r"^[0-9a-zA-Z\s]{1,30}$", description):
             return description
         else:
