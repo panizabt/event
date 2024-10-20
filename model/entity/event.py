@@ -6,19 +6,19 @@ class Event(Base):
     __tablename__ = "event_tbl"
 
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
-    _title = Column("title_date", String(50))
+    _title = Column("title", String(50))
     _start_date_time = Column("start_date_time", DateTime)
     _end_date_time = Column("end_date_time", DateTime)
     _event_type = Column("event_type", String(20), nullable=False)
-    _duration = Column("duration", Integer, nullable=False)
-    _description = Column("description", String(100), nullable=False)
+    _duration = Column("duration", Integer)
+    _description = Column("description", String(100))
     _price = Column("price", Integer, nullable=False)
 
    # _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
     #ticket = relationship("Ticket", back_populates="event")
 
-    #_salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
-    #salon = relationship("Salon", back_populates="event")
+    _salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
+    salon = relationship("Salon", back_populates="events")
 
     def __init__(self, id, title, start_date_time, end_date_time, event_type, duration, description, price, salon):
         self.id = id
