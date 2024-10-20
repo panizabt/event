@@ -20,54 +20,54 @@ class Salon(Base):
         self.description= description
         self.isavailable=is_available
 
-        @property
-        def id(self):
-            return self._id
+    @property
+    def id(self):
+        return self._id
 
-        @id.setter
-        def id(self, id):
-                self._id = id
+    @id.setter
+    def id(self, id):
+            self._id = id
 
-        @property
-        def title(self):
-            return self._title
+    @property
+    def title(self):
+        return self._title
 
-        @title.setter
-        def title(self, title):
-            self._title = title
+    @title.setter
+    def title(self, title):
+        self._title = title
 
-        @property
-        def location(self):
-            return self._location
+    @property
+    def location(self):
+        return self._location
 
-        @location.setter
-        def location(self, location):
-            self._location = location
+    @location.setter
+    def location(self, location):
+        self._location = location
 
-        @property
-        def capacity(self):
-            return self._capacity
+    @property
+    def capacity(self):
+        return self._capacity
 
-        @capacity.setter
-        def capacity(self, capacity):
-            self._capacity = capacity
+    @capacity.setter
+    def capacity(self, capacity):
+        self._capacity = capacity
 
-        @property
-        def description(self):
-            return self._description
+    @property
+    def description(self):
+        return self._description
 
-        @description.setter
-        def description(self, description):
-            self._description = description
+    @description.setter
+    def description(self, description):
+        self._description = description
 
-        @property
-        def is_available(self):
-            return self._is_available
+    @property
+    def is_available(self):
+        return self._is_available
 
-        @is_available.setter
-        def is_available(self, is_available):
-            self._is_available = is_available
-            return self
+    @is_available.setter
+    def is_available(self, is_available):
+        self._is_available = is_available
+
 
 
 
