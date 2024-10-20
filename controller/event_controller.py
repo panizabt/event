@@ -1,6 +1,6 @@
-from model.entity.event import Event
+from model.entity import *
 from model.service.event_service import EventService
-from model.tools.decorator import exception_handling
+from model.tools.decorator import *
 
 
 class EventController:
