@@ -1,7 +1,5 @@
-from controller.event_controller import EventController
 from model.entity import *
-
-
+from controller import EventController
 
 
 # todo : error

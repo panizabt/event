@@ -1,7 +1,5 @@
-
-
-from model.entity.salon import Salon
-from model.repository.crud_repository import CrudRepository
+from model.entity import Salon
+from model.repository import CrudRepository
 
 class SalonService:
     repo = CrudRepository(Salon)

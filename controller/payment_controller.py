@@ -1,6 +1,6 @@
 from model.entity import *
-from model.service.payment_service import PaymentService
-from model.tools.decorator import *
+from model.service import PaymentService
+from model.tools import *
 
 
 class PaymentController:
@@ -23,29 +23,29 @@ class PaymentController:
     @exception_handling
     def remove(cls, id):
         PaymentService.remove(id)
-        return True, "Info: Payment Removed!"
+        return  "Info: Payment Removed!"
 
     @classmethod
     @exception_handling
     def find_all(cls):
-        return True, PaymentService.find_all()
+        return  PaymentService.find_all()
 
     @classmethod
     @exception_handling
     def find_by_id(cls, id):
-        return True, PaymentService.find_by_id(id)
+        return  PaymentService.find_by_id(id)
 
     @classmethod
     @exception_handling
     def find_by_ticket(cls, ticket_id):
-        return True, PaymentService.find_by_ticket(ticket_id)
+        return  PaymentService.find_by_ticket(ticket_id)
 
     @classmethod
     @exception_handling
     def find_by_data_time(cls, data_time):
-        return True, PaymentService.find_by_data_time(data_time)
+        return  PaymentService.find_by_data_time(data_time)
 
     @classmethod
     @exception_handling
     def find_by_payment_type(cls, payment_type):
-        return True, PaymentService.find_by_payment_type(payment_type)
+        return  PaymentService.find_by_payment_type(payment_type)

@@ -1,0 +1,6 @@
+from controller.admin_controller import AdminController
+from controller.customer_controller import CustomerController
+from controller.payment_controller import PaymentController
+from controller.salon_controller import SalonController
+from controller.ticket_controller import TicketController
+from controller.event_controller import EventController

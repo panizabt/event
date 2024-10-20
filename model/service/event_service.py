@@ -1,5 +1,5 @@
-from model.entity.event import Event
-from model.repository.crud_repository import CrudRepository
+from model.entity import Event
+from model.repository import CrudRepository
 
 
 class EventService:
@@ -27,15 +27,15 @@ class EventService:
 
     @classmethod
     def find_by_title(cls, title):
-        return cls.repo.find_by_title(title)
+        return cls.repo.find_by(Event.title == title)
 
     @classmethod
     def find_by_date_time(cls, start_date_time):
-        return cls.repo.date_time(start_date_time)
+        return cls.repo.find_by(Event.start_date_time == start_date_time)
 
     @classmethod
     def find_by_salon(cls, salon_id):
-       return cls.repo.find_by_salon(salon_id)
+       return cls.repo.find_by(Event._salon_id == salon_id)
 
 
 #test2

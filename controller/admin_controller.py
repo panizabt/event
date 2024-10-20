@@ -1,7 +1,6 @@
-
-from model.tools.decorator import exception_handling
-from model.entity.admin import Admin
-from model.service.admin_service import AdminService
+from model.tools import exception_handling
+from model.entity import Admin
+from model.service import AdminService
 
 
 class AdminController:    
@@ -38,3 +37,6 @@ class AdminController:
     @exception_handling
     def find_by_id(cls, id):
             return AdminService.find_by_id(id)
+
+    # todo : find by username
+    # todo : find by username and password

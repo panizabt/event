@@ -1,6 +1,6 @@
-from model.entity.ticket import Ticket
-from model.service.ticket_service import TicketService
-from model.tools.decorator import exception_handling
+from model.entity import Ticket
+from model.service import TicketService
+from model.tools import exception_handling
 
 
 class TicketController:
@@ -29,22 +29,22 @@ class TicketController:
     @exception_handling
     def find_all(cls):
         tickets = TicketService.find_all()
-        return True, tickets
+        return  tickets
 
     @classmethod
     @exception_handling
     def find_by_id(cls, id):
         ticket = TicketService.find_by_id(id)
-        return True, ticket
+        return  ticket
 
     @classmethod
     @exception_handling
     def find_by_customer(cls, customer_id):
         tickets = TicketService.find_by_customer(customer_id)
-        return True, tickets
+        return  tickets
 
     @classmethod
     @exception_handling
     def find_by_event(cls, event_id):
         tickets = TicketService.find_by_event(event_id)
-        return True, tickets
+        return  tickets

@@ -14,10 +14,9 @@ class Event(Base):
     _description = Column("description", String(100))
     _price = Column("price", Integer, nullable=False)
 
-   # _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
-    #ticket = relationship("Ticket", back_populates="event")
+    ticket = relationship("Ticket", back_populates="event")
 
-    _salon = Column("salon", Integer, ForeignKey("salon_tbl.id"))
+    _salon_id = Column("salon_id", Integer, ForeignKey("salon_tbl.id"))
     salon = relationship("Salon")
 
     def __init__(self, id, title, start_date_time, end_date_time, event_type, duration, description, price, salon):

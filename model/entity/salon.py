@@ -1,4 +1,3 @@
-
 from model.tools import *
 from model.entity import *
 
@@ -20,6 +19,8 @@ class Salon(Base):
         self.capacity = capacity
         self.description= description
         self.isavailable=is_available
+
+    # todo : setters validator
 
     @property
     def id(self):

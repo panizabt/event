@@ -1,4 +1,3 @@
-
 from model.entity import *
 from model.tools import *
 
@@ -11,8 +10,10 @@ class Payment(Base):
     _payment_type = Column("payment_type", String(30), nullable=False)
     _description = Column("description", String(50), nullable=False)
 
-    # _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
-    # ticket = relationship("Ticket", back_populates="payment")
+    _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
+    ticket = relationship("Ticket")
+
+    # todo : setter validation
 
     def __init__(self, id, amount, date_time, payment_type, description):
         self.id = id
@@ -60,10 +61,6 @@ class Payment(Base):
     @description.setter
     def description(self, description):
         self._description = Validation.payment_description_validator(description, "Invalid description")
-
-#test
-
-
 
 
 

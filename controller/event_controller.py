@@ -1,6 +1,6 @@
 from model.entity import *
-from model.service.event_service import EventService
-from model.tools.decorator import *
+from model.service import EventService
+from model.tools import *
 
 
 class EventController:
@@ -18,7 +18,7 @@ class EventController:
     @exception_handling
     def edit(cls, id, title, start_date_time, end_date_time, event_type, duration, description, price):
             event = Event(id, title, start_date_time, end_date_time, event_type, duration, description, price, salon)
-            EventService.edit(Event)
+            EventService.edit(event)
             return  "Event edited"
 
 

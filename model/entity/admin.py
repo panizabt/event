@@ -4,6 +4,7 @@ from model.tools import *
 
 class Admin(Base):
     __tablename__ = "admin_tbl"
+
     _id = Column("id",Integer, primary_key=True, autoincrement=True)
     _name = Column("name",String(20), nullable=False)
     _surname = Column("surname",String(20), nullable=False)

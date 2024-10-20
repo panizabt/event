@@ -1,7 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
-from sqlalchemy.orm import relationship
-
-from model.entity.base import Base
+from model.entity import *
 
 
 class Ticket(Base):
@@ -9,29 +6,31 @@ class Ticket(Base):
 
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title = Column("title", String(20), nullable=False)
-    _start_date = Column("start_date", Date, nullable=False)
+    _start_date_time = Column("start_date_time", DateTime, nullable=False)
     _duration = Column("duration", Integer, nullable=False)
     _price = Column("price", Integer, nullable=False)
 
-    #_customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
-    #customer = relationship("Customer")
+    # todo : check relations
+    _customer_id = Column("customer_id", Integer, ForeignKey("customer_tbl.id"))
+    customer = relationship("Customer")
 
-    #_payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
-    #payment = relationship("Payment",back_populates="tickets")
+    _payment_id = Column("payment_id", Integer, ForeignKey("payment_tbl.id"))
+    payment = relationship("Payment")
 
-    #_event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
-    #event = relationship("Event")
+    _event_id = Column("event_id", Integer, ForeignKey("event_tbl.id"))
+    event = relationship("Event")
 
-    def __init__(self, id, title, start_date, duration, event, price, payment, customer):
+    def __init__(self, id, title, start_date_time, duration, event, price, payment, customer):
         self.id = id
         self.title = title
-        self.start_date = start_date
+        self.start_date_time = start_date_time
         self.duration = duration
         self.event = event
         self.price = price
         self.payment = payment
         self.customer = customer
 
+    # todo : setter validation
     @property
     def id(self):
         return self._id
@@ -49,12 +48,12 @@ class Ticket(Base):
         self._title = title
 
     @property
-    def start_date(self):
-        return self._start_date
+    def start_date_time(self):
+        return self._start_date_time
 
-    @start_date.setter
-    def start_date(self, start_date):
-        self._start_date = start_date
+    @start_date_time.setter
+    def start_date_time(self, start_date_time):
+        self._start_date_time = start_date_time
 
     @property
     def duration(self):

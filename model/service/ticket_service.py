@@ -1,5 +1,5 @@
-from model.entity.ticket import Ticket
-from model.repository.crud_repository import CrudRepository
+from model.entity import Ticket
+from model.repository import CrudRepository
 
 
 class TicketService:
@@ -27,8 +27,8 @@ class TicketService:
 
     @classmethod
     def find_by_customer(cls, customer_id):
-        return cls.repo.find_by(Ticket.customer_id == customer_id)
+        return cls.repo.find_by(Ticket._customer_id == customer_id)
 
     @classmethod
     def find_by_event(cls, event_id):
-        return cls.repo.find_by(Ticket.event_id == event_id)
+        return cls.repo.find_by(Ticket._event_id == event_id)

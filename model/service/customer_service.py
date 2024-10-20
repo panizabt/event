@@ -1,5 +1,5 @@
-from model.entity.customer import Customer
-from model.repository.crud_repository import CrudRepository
+from model.entity import Customer
+from model.repository import CrudRepository
 
 
 class CustomerService:
@@ -27,16 +27,16 @@ class CustomerService:
 
     @classmethod
     def find_by_username(cls, username):
-        return cls.repo.find_by_username(username)
+        return cls.repo.find_by(Customer.username == username)
 
     @classmethod
     def find_by_password(cls, password):
-        return cls.repo.find_by_password(password)
+        return cls.repo.find_by_password(password) # todo : error
 
     @classmethod
     def find_by_name(cls, name):
-        return cls.repo.find_by_name(name)
+        return cls.repo.find_by_name(name) # todo : error
 
     @classmethod
     def find_by_family(cls, family):
-        return cls.repo.find_by_family(family)
+        return cls.repo.find_by_family(family) # todo : error

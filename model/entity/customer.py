@@ -1,5 +1,4 @@
-from model.entity.base import Base
-from sqlalchemy import Column, Integer, String
+from model.entity import *
 from model.tools import *
 
 
