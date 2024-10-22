@@ -16,21 +16,19 @@ class CustomerView:
         self.password.set("")
         self.address.set("")
         self.phone.set("")
-        self.postal_code("")
+        self.postal_code.set("")
         #self.clear_table()
         #self.show_on_table()
 
     @staticmethod
-    def table_click(self, selected_item):
-     def table_click(self, select_item):
+    def table_click(self, select_item):
          self.id.set(select_item[0])
-         self.title_date.set(select_item[1])
-         self.start_date.set(select_item[2])
-         self.end_date_time.set(select_item[3])
-         self.title_type.set(select_item[4])
-         self.duration.set(select_item[5])
-         self.description.set(select_item[6])
-         self.price.set(select_item[7])
+         self.name.set(select_item[1])
+         self.family.set(select_item[2])
+         self.password.set(select_item[3])
+         self.address.set(select_item[4])
+         self.phone.set(select_item[5])
+         self.postal_code.set(select_item[6])
 
 
     def save_click(self):
@@ -44,10 +42,10 @@ class CustomerView:
             self.postal_code.get()
         )
         if status:
-            msg.showinfo("Save",message)
+            msg.showinfo("Save","customer save shood")
             self.reset_form()
         else:
-            msg.showerror("Save Error",message)
+            msg.showerror("Save Error","custome save naaashod")
 
 
 
@@ -62,10 +60,10 @@ class CustomerView:
             self.postal_code.get()
         )
         if status:
-            msg.showinfo("Edit", message)
+            msg.showinfo("Edit", "customer edit shood")
             self.reset_form()
         else:
-            msg.showerror("edit Error",message)
+            msg.showerror("edit Error","customer edit naaashod")
 
 
 
@@ -100,9 +98,9 @@ class CustomerView:
        # self.table.refresh_table(CustomerController.find_all()[1])
 
 
-        Button(self.window, text="Save", width=10,bg="green" , command=self.save_click).place(x=100, y=320)
-        Button(self.window, text="Edit", width=10,bg="yellow" , command=self.edit_click).place(x=100, y=360)
-        Button(self.window, text="Remove", width=10,bg="red" , command=self.remove_click).place(x=100, y=400)
+        Button(self.window, text="Save", width=10,bg="green" ,fg="black", command=self.save_click).place(x=130, y=320)
+        Button(self.window, text="Edit", width=10,bg="yellow" ,fg="black",  command=self.edit_click).place(x=130, y=360)
+        Button(self.window, text="Remove", width=10,bg="red" , fg="black", command=self.remove_click).place(x=130, y=400)
 
 #        self.reset_form()
         self.window.mainloop()
