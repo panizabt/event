@@ -131,7 +131,6 @@ class Validation:
         else:
             raise ValueError(message)
 
-
     @staticmethod
     def id_validator(id, message):
         if type(id) == int and id > 0:
@@ -146,8 +145,47 @@ class Validation:
         else:
             raise ValueError(message)
 
+    @staticmethod
+    def start_date_time_validator(start_date_time, message):
+        if type(start_date_time, datetime) and start_date_time > datetime.now():
+            return start_date_time
+        else:
+            raise ValueError(message)
 
+    @staticmethod
+    def event_validator(event, message):
+        if type(event) == str and re.match(r"^[a-zA-Z\s]{1,50}$", event):
+            return event
+        else:
+            raise ValueError(message)
 
+    @staticmethod
+    def payment_validator(payment, message):
+        if type(payment) == bool:
+            return payment
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def customer_validator(customer, message):
+        if type(customer) == str and re.match(r"^[a-zA-Z\s]{1,100}$", customer):
+            return customer
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def id_validator(id, message):
+        if type(id) == int and id > 0:
+            return id
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def title_validator(title, message):
+        if type(title) == str and re.match(r"^[a-zA-Z0-9\s]{1,30}$", title):
+            return title
+        else:
+            raise ValueError(message)
 
 
 
