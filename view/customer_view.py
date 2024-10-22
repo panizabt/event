@@ -16,7 +16,7 @@ class CustomerView:
         self.password.set("")
         self.address.set("")
         self.phone.set("")
-        self.postal_code("")
+        self.postal_code.set("")
         #self.clear_table()
         #self.show_on_table()
 
@@ -100,9 +100,9 @@ class CustomerView:
        # self.table.refresh_table(CustomerController.find_all()[1])
 
 
-        Button(self.window, text="Save", width=10,bg="green" , command=self.save_click).place(x=100, y=320)
-        Button(self.window, text="Edit", width=10,bg="yellow" , command=self.edit_click).place(x=100, y=360)
-        Button(self.window, text="Remove", width=10,bg="red" , command=self.remove_click).place(x=100, y=400)
+        Button(self.window, text="Save", width=10,bg="green" ,fg="black", command=self.save_click).place(x=130, y=320)
+        Button(self.window, text="Edit", width=10,bg="yellow" ,fg="black",  command=self.edit_click).place(x=130, y=360)
+        Button(self.window, text="Remove", width=10,bg="red" , fg="black", command=self.remove_click).place(x=130, y=400)
 
 #        self.reset_form()
         self.window.mainloop()

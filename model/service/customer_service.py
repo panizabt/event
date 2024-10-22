@@ -7,15 +7,15 @@ class CustomerService:
 
     @classmethod
     def save(cls, customer):
-        cls.repo.save(customer)
+        return cls.repo.save(customer)
 
     @classmethod
     def edit(cls, customer):
-        cls.repo.edit(customer)
+        return cls.repo.edit(customer)
 
     @classmethod
     def remove(cls, id):
-        cls.repo.remove(id)
+        return cls.repo.remove(id)
 
     @classmethod
     def find_all(cls):
@@ -31,12 +31,12 @@ class CustomerService:
 
     @classmethod
     def find_by_password(cls, password):
-        return cls.repo.find_by_password(password) # todo : error
+        return cls.repo.find_by_password(Customer.password == password) # todo : error
 
     @classmethod
     def find_by_name(cls, name):
-        return cls.repo.find_by_name(name) # todo : error
+        return cls.repo.find_by_name(Customer.name == name) # todo : error
 
     @classmethod
     def find_by_family(cls, family):
-        return cls.repo.find_by_family(family) # todo : error
+        return cls.repo.find_by_family(Customer.family == family) # todo : error
