@@ -63,7 +63,7 @@ class Validation:
 
     @staticmethod
     def title_validator(title, message):
-        if type(title) == date and re.match(r"^[0-9]$", title):
+        if type(title) == str and re.match(r"^[a-zA-Z\S]{1,30}$", title):
             return title
         else:
             raise ValueError(message)
