@@ -139,6 +139,7 @@ class Validation:
         else:
             raise ValueError(message)
 
+
     @staticmethod
     def title_validator(title, message):
         if type(title) == str and re.match(r"^[a-zA-Z0-9\s]{1,30}$", title):
