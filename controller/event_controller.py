@@ -11,7 +11,7 @@ class EventController:
             event = Event(None, title, start_date_time, end_date_time, event_type, duration, description, price, salon)
             print(event)
             EventService.save(event)
-            return  "Event saved"
+            return event
 
 
     @classmethod
@@ -19,14 +19,14 @@ class EventController:
     def edit(cls, id, title, start_date_time, end_date_time, event_type, duration, description, price):
             event = Event(id, title, start_date_time, end_date_time, event_type, duration, description, price, salon)
             EventService.edit(event)
-            return  "Event edited"
+            return event
 
 
     @classmethod
     @exception_handling
     def remove(cls, id):
             EventService.remove(id)
-            return  "Event removed"
+            return old_event
 
 
     @classmethod
