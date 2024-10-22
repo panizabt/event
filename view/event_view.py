@@ -89,13 +89,15 @@ class EventView:
         self.table = Table(win, ["id", "title_date", "start_date", "end_date_time", "title_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
         self.table.refresh_table(EventController.find_all()[1])
     
-        Button(win, text="Save", width=10, command=self.save_click).place(x=100, y=180)
-        Button(win, text="Edit", width=10, command=self.edit_click).place(x=100, y=210)
-        Button(win, text="Remove", width=10, command=self.remove_click).place(x=100, y=240)
+        Button(win, text="Save", width=10,bg="red" ,  command=self.save_click).place(x=100, y=380)
+        Button(win, text="Edit", width=10,bg= "blue" , command=self.edit_click).place(x=100, y=310)
+        Button(win, text="Remove", width=10,bg="pink" , command=self.remove_click).place(x=100, y=340)
 
         self.reset_form()
 
         win.mainloop()
+
+ui = EventView()
 
 
 
