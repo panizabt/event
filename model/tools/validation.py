@@ -112,13 +112,6 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def title_validator(title, message):
-        if re.match(r"^[0-9a-zA-Z\s]{1,20}$", title):
-            return title
-        else:
-            raise ValueError(message)
-
-    @staticmethod
     def payment_amount_validator(amount, message):
         if type(amount) == int and amount > 0:
             return amount
@@ -138,6 +131,23 @@ class Validation:
             return description
         else:
             raise ValueError(message)
+
+    @staticmethod
+    def id_validator(id, message):
+        if type(id) == int and id > 0:
+            return id
+        else:
+            raise ValueError(message)
+
+    @staticmethod
+    def title_validator(title, message):
+        if type(title) == str and re.match(r"^[a-zA-Z0-9\s]{1,30}$", title):
+            return title
+        else:
+            raise ValueError(message)
+
+
+
 
 
 
