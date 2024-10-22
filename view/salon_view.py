@@ -77,9 +77,9 @@ class SalonView:
                            ["id", "title", "location", "capacity", "availability"],
                            [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
 
-        Button(win, text="Save", width=10, bg="green", command=self.save_click).place(x=50, y=300)
-        Button(win, text="Edit", width=10, bg="yellow", command=self.edit_click).place(x=150, y=300)
-        Button(win, text="Remove", width=10, bg="red", command=self.remove_click).place(x=250, y=300)
+        Button(win, text="Save", width=10, bg="white", command=self.save_click).place(x=50, y=300)
+        Button(win, text="Edit", width=10, bg="green", command=self.edit_click).place(x=150, y=300)
+        Button(win, text="Remove", width=10, bg="yellow", command=self.remove_click).place(x=250, y=300)
 
 
         self.reset_form()
