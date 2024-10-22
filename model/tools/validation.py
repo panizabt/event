@@ -132,20 +132,6 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def id_validator(id, message):
-        if type(id) == int and id > 0:
-            return id
-        else:
-            raise ValueError(message)
-
-    @staticmethod
-    def title_validator(title, message):
-        if type(title) == str and re.match(r"^[a-zA-Z0-9\s]{1,30}$", title):
-            return title
-        else:
-            raise ValueError(message)
-
-    @staticmethod
     def start_date_time_validator(start_date_time, message):
         if type(start_date_time, datetime) and start_date_time > datetime.now():
             return start_date_time
