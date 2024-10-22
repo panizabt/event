@@ -7,22 +7,28 @@ from controller import CustomerController
 CustomerController.save("reza","rezaii","rez","reza123",
                         "shargh",123456788,12345677)
 
-#CustomerController.edit(1,"hassan")
+CustomerController.save("hamed","hamedi","hm","hamed123",
+                        "gharb",123456778,12342677)
 
-#CustomerController.edit(1,"hassan","rezaii","rez","reza123",
-               #         "shargh",123456788,12345677)
+CustomerController.save("sara","nazemi","snazemi","sara123",
+                        "jonob",123336778,13332677)
 
-#CustomerController.remove(1)
 
-#CustomerController.find_all()
+CustomerController.edit(2,"hassan","hasani","hsan","hamed123",
+                        "gharb",123456778,12342677)
 
-#CustomerController.find_by_id(1)
 
-#CustomerController.find_by_family("rezaii")
+CustomerController.remove(3)
 
-#CustomerController.find_by_name("reza")
+CustomerController.find_all()
 
-#CustomerController.find_by_username("rez")
-#CustomerController.find_by_password("reza123")
+CustomerController.find_by_id(2,)
+
+CustomerController.find_by_family("rezaii")
+
+CustomerController.find_by_name("reza")
+
+CustomerController.find_by_username("rez")
+CustomerController.find_by_password("reza123")
 
 # todo : find by username, usernameandpassword,
