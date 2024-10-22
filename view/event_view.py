@@ -78,7 +78,7 @@ class EventView:
         win.geometry("800x500")
 
         self.id = LabelWithEntry(win,"Id", 20, 20, data_type="int", state="readonly")
-        self.title = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
+        self.title = LabelWithEntry(win, "Title", 20, 200, data_type="int")
         self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
         self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
         self.event_type = LabelWithEntry(win, "Title Type", 20, 80)
