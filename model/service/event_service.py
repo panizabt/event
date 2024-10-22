@@ -7,15 +7,15 @@ class EventService:
 
     @classmethod
     def save(cls, event):
-        cls.repo.save(event)
+       return cls.repo.save(event)
 
     @classmethod
     def edit(cls, event):
-        cls.repo.save(event)
+       return cls.repo.save(event)
 
     @classmethod
     def remove(cls, id):
-        cls.repo.remove(id)
+       return cls.repo.remove(id)
 
     @classmethod
     def find_all(cls):
