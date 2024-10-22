@@ -18,6 +18,7 @@ class TicketView:
         self.clear_table()
         self.show_on_table()
 
+    @staticmethod
     def table_click(self, selected_item):
         self.id.set(selected_item[0])
         self.title.set(selected_item[1])
@@ -81,11 +82,11 @@ class TicketView:
     def __init__(self):
         win = Tk()
         win.title("Ticket Management System")
-        win.geometry("800x400")
+        win.geometry("1200x500")
 
-        self.id = LabelWithEntry(win, "ID", 20, 20, data_type="int", state="readonly")
+        self.id = LabelWithEntry(win, "ID", 20, 30, data_type="int", state="readonly")
         self.title = LabelWithEntry(win, "Title", 20, 60)
-        self.start_date = LabelWithEntry(win, "Start Date (YYYY-MM-DD)", 20, 100)
+        self.start_date = LabelWithEntry(win, "Start Date", 20, 100)
         self.duration = LabelWithEntry(win, "Duration", 20, 140, data_type="int")
         self.event = LabelWithEntry(win, "Event", 20, 180)
         self.price = LabelWithEntry(win, "Price", 20, 220, data_type="int")
@@ -93,13 +94,16 @@ class TicketView:
         self.customer_id = LabelWithEntry(win, "Customer ID", 20, 300, data_type="int")
 
         self.table = Table(win, ["ID", "Title", "Start Date", "Duration", "Event", "Price", "Payment", "Customer ID"],
-                           [60, 100, 120, 80, 100, 60, 80, 100], 400, 20, self.table_click)
+          [60, 100, 120, 80, 100, 60, 80, 100], 400, 20, self.table_click)
         self.show_on_table()
 
-        Button(win, text="Save", width=10, command=self.save_click).place(x=100, y=340)
-        Button(win, text="Edit", width=10, command=self.edit_click).place(x=200, y=340)
-        Button(win, text="Remove", width=10, command=self.remove_click).place(x=300, y=340)
+        Button(win, text="Save", width=10, bg="green", command=self.save_click).place(x=100, y=340)
+        Button(win, text="Edit", width=10, bg="yellow", command=self.edit_click).place(x=100, y=380)
+        Button(win, text="Remove", width=10, bg="red", command=self.remove_click).place(x=100, y=420)
 
-        self.reset_form()
+        # self.reset_form()
 
         win.mainloop()
+
+
+ui = TicketView()

@@ -12,8 +12,8 @@ PaymentController.save(15432, d_t, "cashfgfdgdqefg", "Desc")
 PaymentController.save(1221345, d_t, "cashqerqedfgdfg", "Dessfgsgw")
 
 #
-# PaymentController.find_all()
+PaymentController.find_all()
 # #
-# PaymentController.find_by_id(1)
+PaymentController.find_by_id(1)
 #
-# PaymentController.remove(1)
+PaymentController.remove(1)
