@@ -81,12 +81,12 @@ class EventView:
         self.title = LabelWithEntry(win, "Title", 20, 200, data_type="int")
         self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 200, data_type="date")
         self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 200, data_type="date")
-        self.event_type = LabelWithEntry(win, "Title_type", 20, 80)
+        self.event_type = LabelWithEntry(win, "event_type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 200, data_type="int")
 
-        self.table = Table(win, ["id", "title_date", "start_date", "end_date_time", "title_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
+        self.table = Table(win, ["id", "title", "start_date_time", "end_date_time", "event_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
         self.table.refresh_table(EventController.find_all()[1])
     
         Button(win, text="Save", width=10,bg="red" ,  command=self.save_click).place(x=100, y=380)
