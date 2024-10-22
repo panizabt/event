@@ -31,6 +31,7 @@ class CrudRepository:
     def edit(self, entity):
         session.merge(entity)
         session.commit()
+        session.refresh(entity)
         return entity
 
     def remove(self, id):
