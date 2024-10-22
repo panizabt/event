@@ -69,9 +69,9 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
-    def start_time_validator(start_time, message):
-        if type(start_time) == datetime:
-            return start_time
+    def start_time_validator(start_date_time, message):
+        if type(start_date_time) == datetime:
+            return start_date_time
         else:
             raise ValueError(message)
 
