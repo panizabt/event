@@ -7,15 +7,15 @@ class TicketService:
 
     @classmethod
     def save(cls, ticket):
-        cls.repo.save(ticket)
+       return cls.repo.save(ticket)
 
     @classmethod
     def edit(cls, ticket):
-        cls.repo.edit(ticket)
+        return cls.repo.edit(ticket)
 
     @classmethod
     def remove(cls, ticket_id):
-        cls.repo.remove(ticket_id)
+        return cls.repo.remove(ticket_id)
 
     @classmethod
     def find_all(cls):
