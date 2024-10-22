@@ -10,7 +10,7 @@ class AdminController:
     def save(cls, name, surname, username, password, access_level):
             admin = Admin(None, name, surname, username, password, access_level)
             AdminService.save(admin)
-            return "Admin Saved"
+            return admin
 
 
     @classmethod
@@ -18,14 +18,14 @@ class AdminController:
     def edit(cls, id, name, surname, username, password, access_level):
             admin = Admin(id, name, surname, username, password, access_level)
             AdminService.edit(admin)
-            return "Admin Edited"
+            return admin
 
 
     @classmethod
     @exception_handling
     def remove(cls, id):
-            AdminService.remove(id)
-            return "Admin Removed"
+            old_admin = AdminService.remove(id)
+            return old_admin
 
 
     @classmethod
