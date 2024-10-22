@@ -88,6 +88,8 @@ class EventView:
 
         self.table = Table(win, ["id", "title_date", "start_date", "end_date_time", "title_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
         self.table.refresh_table(EventController.find_all()[1])
+
+
     
         Button(win, text="Save", width=10, command=self.save_click).place(x=100, y=180)
         Button(win, text="Edit", width=10, command=self.edit_click).place(x=100, y=210)

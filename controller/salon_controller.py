@@ -22,8 +22,8 @@ class SalonController:
     @classmethod
     @exception_handling
     def remove(cls, id):
-        SalonService.remove(id)
-        return salon
+        old_salon = SalonService.remove(id)
+        return old_salon
 
     @classmethod
     @exception_handling
