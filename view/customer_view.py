@@ -23,6 +23,7 @@ class CustomerView:
 
     @staticmethod
     def table_click(self, select_item):
+
          self.id.set(select_item[0])
          self.name.set(select_item[1])
          self.family.set(select_item[2])

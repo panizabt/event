@@ -42,7 +42,7 @@ class Customer(Base):
     @name.setter
     def name(self, name):
         self._name = Validation.name_validator(name, "Invalid Name")
-# e
+
     @property
     def family(self):
         return self._family
