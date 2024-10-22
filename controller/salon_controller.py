@@ -10,20 +10,20 @@ class SalonController:
     def save(cls, title, location, capacity, description, is_available):
         saloon = Salon(None, title, location, capacity, description, is_available)
         SalonService.save(saloon)
-        return "Saloon Saved"
+        return saloon
 
     @classmethod
     @exception_handling
     def edit(cls, id, title, location, capacity, description, is_available):
         salon = Salon(id, title, location, capacity, description, is_available)
         SalonService.edit(salon)
-        return "Salon edited"
+        return salon
 
     @classmethod
     @exception_handling
     def remove(cls, id):
-        SalonService.remove(id)
-        return "Salon removed"
+        old_salon = SalonService.remove(id)
+        return old_salon
 
     @classmethod
     @exception_handling

@@ -4,7 +4,7 @@ from model.entity import *
 class Salon(Base):
     __tablename__ = "salon_tbl"
 
-    _id = Column("id", Integer, primary_key=True, autoincrement=True)
+    id = Column("id", Integer, primary_key=True, autoincrement=True)
     _title = Column("title", String(30))
     _location= Column("location", String(100))
     _capacity = Column("capacity", Integer)
@@ -18,18 +18,9 @@ class Salon(Base):
         self.location = location
         self.capacity = capacity
         self.description= description
-        self.isavailable=is_available
+        self.is_available=is_available
 
     # todo : setters validator
-
-    @property
-    def id(self):
-        return self._id
-
-    @id.setter
-    def id(self, id):
-            self._id = id
-
     @property
     def title(self):
         return self._title
