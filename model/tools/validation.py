@@ -132,6 +132,14 @@ class Validation:
             raise ValueError(message)
 
     @staticmethod
+    def payment_date_time_validator(date_time, message):
+        if date_time == datetime:
+            return date_time
+        else:
+            raise ValueError(message)
+
+
+    @staticmethod
     def start_date_time_validator(start_date_time, message):
         if type(start_date_time, datetime) and start_date_time > datetime.now():
             return start_date_time
