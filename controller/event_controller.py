@@ -25,8 +25,9 @@ class EventController:
     @classmethod
     @exception_handling
     def remove(cls, id):
-            EventService.remove(id)
-            return old_event
+           old_event = EventService.remove(id)
+           return old_event
+
 
 
     @classmethod
