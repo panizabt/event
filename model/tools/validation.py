@@ -131,6 +131,7 @@ class Validation:
         else:
             raise ValueError(message)
 
+
     @staticmethod
     def id_validator(id, message):
         if type(id) == int and id > 0:
