@@ -139,6 +139,13 @@ class Validation:
         else:
             raise ValueError(message)
 
+    @staticmethod
+    def payment_date_time_validator(date_time, message):
+        if date_time.year == datetime.now().year and date_time.month == datetime.now().month:
+            return date_time
+        else:
+            raise ValueError(message)
+
 
 
 

@@ -44,7 +44,7 @@ class Payment(Base):
 
     @date_time.setter
     def date_time(self, date_time):
-        self._date_time = date_time
+        self._date_time = Validation.payment_date_time_validator(date_time,"invalid payment date")
 
     @property
     def payment_type(self):
