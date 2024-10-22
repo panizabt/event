@@ -4,6 +4,8 @@ import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 
 from  controller.salon_controller import SalonController
+from view.component import LabelWithEntry
+
 
 class SalonView:
     def resert(self):
@@ -60,6 +62,24 @@ class SalonView:
 
             else:
                 msg.showerror("Salon Remove",message)
+
+    def __init__(self):
+        win = Tk()
+        win.title("Event View")
+        win.geometry("800x500")
+
+        self.id =LabelWithEntry(win,"id",20,100,)
+
+
+
+
+
+        Button(win, text="Save", command=self.save_record).place(x=100, y=220)
+        Button(win, text="Remove", command=self.remove_record).place(x=100, y=250)
+        Button(win, text="Edit", command=self.edit_record).place(x=100, y=280)
+
+
+        win.mainloop()
 
 
 
