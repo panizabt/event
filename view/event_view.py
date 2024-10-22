@@ -79,9 +79,9 @@ class EventView:
 
         self.id = LabelWithEntry(win,"Id", 20, 20, data_type="int", state="readonly")
         self.title = LabelWithEntry(win, "Title", 20, 200, data_type="int")
-        self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
-        self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
-        self.event_type = LabelWithEntry(win, "Title Type", 20, 80)
+        self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 200, data_type="date")
+        self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 200, data_type="date")
+        self.event_type = LabelWithEntry(win, "Title_type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 200, data_type="int")
