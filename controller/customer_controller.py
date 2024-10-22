@@ -10,20 +10,20 @@ class CustomerController:
     def save(cls, name, family, username, password, address, phone, postal_code):
         customer = Customer(None, name, family, username, password, address, phone, postal_code)
         CustomerService.save(customer)
-        return "Customer Saved"
+        return customer
 
     @classmethod
     @exception_handling
     def edit(cls, id, name, family, username, password, address, phone, postal_code):
         customer = Customer(id, name, family, username, password, address, phone, postal_code)
         CustomerService.edit(customer)
-        return "Customer Edited"
+        return customer
 
     @classmethod
     @exception_handling
     def remove(cls, id):
-        CustomerService.remove(id)
-        return "Customer Removed"
+        old_customer = CustomerService.remove(id)
+        return old_customer
 
     @classmethod
     @exception_handling
