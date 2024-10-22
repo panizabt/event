@@ -44,7 +44,7 @@ class Event(Base):
 
     @title.setter
     def title(self, title):
-        self._title = Validation.title_validator(title, "Invalid Title")
+        self._title = Validation.title_validator(title, "Invalid title")
 
     @property
     def start_date_time(self):
@@ -52,7 +52,7 @@ class Event(Base):
 
     @start_date_time.setter
     def start_date_time(self, start_date_time):
-        self._start_date_time = Validation.start_time_validator(start_date_time, "Invalid start_time")
+        self._start_date_time = Validation.start_time_validator(start_date_time, "Invalid start_date_time")
 
     @property
     def end_date_time(self):

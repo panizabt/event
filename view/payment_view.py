@@ -80,7 +80,7 @@ class PaymentView:
         Button(win, text="Save", command=self.save_record).place(x=100, y=220)
         Button(win, text="Remove", command=self.remove_record).place(x=100, y=250)
         Button(win, text="Edit", command=self.edit_record).place(x=100, y=280)
-        Button(win, text="Search", command=self.edit_record).place(x=100, y=310)
+        Button(win, text="Search", command=self.find_record).place(x=100, y=310)
 
         self.reset_form()
 
