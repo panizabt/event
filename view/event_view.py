@@ -15,6 +15,7 @@ class EventView:
         self.duration.set(0)
         self.description.set("")
         self.price.set(0)
+        self.salon_id.set(0)
 
 
     def table_click(self, select_item):
@@ -26,6 +27,7 @@ class EventView:
          self.duration.set(select_item[5])
          self.description.set(select_item[6])
          self.price.set(select_item[7])
+         self.salon_id.set(select_item[8])
 
 
     def save_click(self):
@@ -37,6 +39,7 @@ class EventView:
              self.duration.get(),
              self.description.get(),
              self.price.get(),
+             self.salon_id.get(),
          )
          if status:
              msg.showinfo('Save', message)
@@ -54,6 +57,7 @@ class EventView:
              self.duration.get(),
              self.description.get(),
              self.price.get(),
+             self.salon_id.get(),
 
          )
          if status:
@@ -81,13 +85,16 @@ class EventView:
         self.title = LabelWithEntry(win, "Title", 20, 200, data_type="int")
         self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 200, data_type="date")
         self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 200, data_type="date")
-        self.event_type = LabelWithEntry(win, "Title_type", 20, 80)
+        self.event_type = LabelWithEntry(win, "event_type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 200, data_type="int")
+        self.salon_id = LabelWithEntry(win, "Salon", 20, 200, data_type="int")
 
-        self.table = Table(win, ["id", "title_date", "start_date", "end_date_time", "title_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
+        self.table = Table(win, ["id", "title", "start_date_time", "end_date_time", "event_type", "duration", "description", "price", "salon_id"], [60, 120, 120, 120, 150, 80, 180, 100, 100], 400, 20, self.table_click)
         self.table.refresh_table(EventController.find_all()[1])
+
+
     
         Button(win, text="Save", width=10,bg="red" ,  command=self.save_click).place(x=100, y=380)
         Button(win, text="Edit", width=10,bg= "blue" , command=self.edit_click).place(x=100, y=310)
