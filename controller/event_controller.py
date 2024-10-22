@@ -25,19 +25,20 @@ class EventController:
     @classmethod
     @exception_handling
     def remove(cls, id):
-            EventService.remove(id)
-            return old_event
+           old_event = EventService.remove(id)
+           return old_event
+
 
 
     @classmethod
     @exception_handling
     def find_all(cls):
-            return  EventService.find_all()
+            return EventService.find_all()
 
     @classmethod
     @exception_handling
     def find_by_id(cls, id):
-            return  EventService.find_by_id(id)
+            return EventService.find_by_id(id)
 
 
 
@@ -50,7 +51,7 @@ class EventController:
     @classmethod
     @exception_handling
     def find_by_date_time(cls, start_date_time):
-           return  EventService.find_by_date_time(start_date_time)
+           return EventService.find_by_date_time(start_date_time)
 
 
 
