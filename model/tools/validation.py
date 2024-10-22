@@ -60,7 +60,6 @@ class Validation:
         if type(address) == str and re.match(r"^[a-zA-Z\s]{2,30}$", address):
             pass
 
-    # --------
 
     @staticmethod
     def title_validator(title, message):
