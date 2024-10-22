@@ -26,13 +26,19 @@ class EventController:
     @exception_handling
     def remove(cls, id):
             EventService.remove(id)
-            return True, "Event removed"
+            return  "Event removed"
 
 
     @classmethod
     @exception_handling
     def find_all(cls):
-            return True, EventService.find_all()
+            return  EventService.find_all()
+
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+            return  EventService.find_by_id(id)
+
 
 
     @classmethod

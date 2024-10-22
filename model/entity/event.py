@@ -16,8 +16,9 @@ class Event(Base):
 
     ticket = relationship("Ticket", back_populates="event")
 
+    # todo : not recognized
     _salon_id = Column("salon_id", Integer, ForeignKey("salon_tbl.id"))
-    salon = relationship("Salon")
+    salon = relationship("Salon", cascade="all")
 
     def __init__(self, id, title, start_date_time, end_date_time, event_type, duration, description, price, salon):
         self.id = id

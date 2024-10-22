@@ -6,12 +6,12 @@ class Payment(Base):
 
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _amount = Column("amount", Float, nullable=False)
-    _date_time = Column("date_time", DateTime, default=datetime.now)
+    _date_time = Column("date_time", DateTime)
     _payment_type = Column("payment_type", String(30), nullable=False)
     _description = Column("description", String(50), nullable=False)
 
-    _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
-    ticket = relationship("Ticket")
+    # _ticket_id = Column("ticket_id", Integer, ForeignKey("ticket_tbl.id"))
+    # ticket = relationship("Ticket")
 
     # todo : setter validation
 
@@ -44,7 +44,8 @@ class Payment(Base):
 
     @date_time.setter
     def date_time(self, date_time):
-        self._date_time = Validation.payment_date_time_validator(date_time,"invalid payment date")
+        # todo : hass error self._date_time = Validation.payment_date_time_validator(date_time,"invalid payment date")
+        self._date_time = date_time
 
     @property
     def payment_type(self):
