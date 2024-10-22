@@ -10,20 +10,20 @@ class TicketController:
     def save(cls, title, start_date, duration, event, price, payment, customer):
         ticket = Ticket(None, title, start_date, duration, event, price, payment, customer)
         TicketService.save(ticket)
-        return "Ticket Saved"
+        return Ticket
 
     @classmethod
     @exception_handling
     def edit(cls, id, title, start_date, duration, event, price, payment, customer):
         ticket = Ticket(id, title, start_date, duration, event, price, payment, customer)
         TicketService.edit(ticket)
-        return "Ticket Edited"
+        return Ticket
 
     @classmethod
     @exception_handling
     def remove(cls, id):
-        TicketService.remove(id)
-        return "Ticket Removed"
+        old_ticket = TicketService.remove(id)
+        return old_ticket
 
     @classmethod
     @exception_handling
@@ -40,11 +40,11 @@ class TicketController:
     @classmethod
     @exception_handling
     def find_by_customer(cls, customer_id):
-        tickets = TicketService.find_by_customer(customer_id)
-        return tickets
+        ticket = TicketService.find_by_customer(customer_id)
+        return ticket
 
     @classmethod
     @exception_handling
     def find_by_event(cls, event_id):
-        tickets = TicketService.find_by_event(event_id)
-        return tickets
+        ticket = TicketService.find_by_event(event_id)
+        return ticket

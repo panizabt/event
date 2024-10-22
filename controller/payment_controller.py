@@ -8,22 +8,22 @@ class PaymentController:
     @classmethod
     @exception_handling
     def save(cls, amount, date_time, payment_type, description):
-        pay = Payment(None, amount, date_time, payment_type, description)
-        PaymentService.save(pay)
-        return "Payment saved"
+        payment = Payment(None, amount, date_time, payment_type, description)
+        PaymentService.save(payment)
+        return payment
 
     @classmethod
     @exception_handling
     def edit(cls, id, amount, date_time, payment_type, description):
-        pay = Payment(id, amount, date_time, payment_type, description)
-        PaymentService.edit(pay)
-        return "Payment Has Been Edited!"
+        payment = Payment(id, amount, date_time, payment_type, description)
+        PaymentService.edit(payment)
+        return payment
 
     @classmethod
     @exception_handling
     def remove(cls, id):
-        PaymentService.remove(id)
-        return  "Info: Payment Removed!"
+        old_payment = PaymentService.remove(id)
+        return  old_payment
 
     @classmethod
     @exception_handling
