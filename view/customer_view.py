@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
+
 from controller.customer_controller import CustomerController
 #from controller import customer_controller as CustomerController
 from view.component import LabelWithEntry, Table
@@ -77,9 +78,20 @@ class CustomerView:
                 msg.showerror("Remove Error", message)
 
 
+    def clear_table(self):
+        self.table.delete(*self.table.get_children())
+
+
+    def show_on_table(self):
+        customer = CustomerController.find_all()[1]
+        for customer in customer:
+            self.table.insert("", "end", values=customer)
+
+
+
     def __init__(self):
         self.window =Tk()
-        self.window.geometry('500x500')
+        self.window.geometry('1200x500')
         self.window.title("Customer")
 
 
@@ -94,8 +106,14 @@ class CustomerView:
 
 
 
-#        self.table = Table(self.window, ["ID", "name", "family", "username","phone","postal_code ", "password"," address"], [60, 100, 100, 80, 80], 250, 20,self.table_click)
-       # self.table.refresh_table(CustomerController.find_all()[1])
+        # self.table = Table(self.window, ["ID", "name", "family", "username","phone","postal_code ", "password"," address"],
+        #                    [60, 100, 100, 80, 80], 250, 20,self.table_click)
+        # self.show_on_table()
+        # self.table.refresh_table(CustomerController.find_all()[1])
+
+        self.table = Table(self.window , ["ID", "name", "family", "username", "phone", "postal_code"],
+                           [120, 120, 120, 120, 120, 120, 120, 120], 400, 20, self.table_click)
+        self.show_on_table()
 
 
         Button(self.window, text="Save", width=10,bg="green" ,fg="black", command=self.save_click).place(x=130, y=320)
