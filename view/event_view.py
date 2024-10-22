@@ -8,7 +8,7 @@ from view.component import LabelWithEntry, Table
 class EventView:
     def reset_from(self):
         self.id.set(0)
-        self.title_date.set("")
+        self.title.set("")
         self.start_date_time.set("")
         self.end_date_time.set("")
         self.title_type.set("")
@@ -19,7 +19,7 @@ class EventView:
 
     def table_click(self, select_item):
          self.id.set(select_item[0])
-         self.title_date.set(select_item[1])
+         self.title.set(select_item[1])
          self.start_date_time.set(select_item[2])
          self.end_date_time.set(select_item[3])
          self.title_type.set(select_item[4])
@@ -30,7 +30,7 @@ class EventView:
 
     def save_click(self):
          status, message = EventController.save(
-             self.title_date.get(),
+             self.title.get(),
              self.start_date_time.get(),
              self.end_date_time.get(),
              self.title_type.get(),
@@ -47,7 +47,7 @@ class EventView:
     def edit_click(self):
          status, message = EventController.edit(
              self.id.get(),
-             self.title_date.get(),
+             self.title.get(),
              self.start_date_time.get(),
              self.end_date_time.get(),
              self.title_type.get(),
@@ -78,7 +78,7 @@ class EventView:
         win.geometry("800x500")
 
         self.id = LabelWithEntry(win,"Id", 20, 20, data_type="int", state="readonly")
-        self.title_date = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
+        self.title = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
         self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
         self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
         self.title_type = LabelWithEntry(win, "Title Type", 20, 80)
