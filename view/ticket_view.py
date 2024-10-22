@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
 from controller.ticket_controller import TicketController
+from model.entity import Ticket
 from view.component import LabelWithEntry, Table
 
 
@@ -18,16 +19,17 @@ class TicketView:
         self.clear_table()
         self.show_on_table()
 
-    @staticmethod
+
     def table_click(self, selected_item):
-        self.id.set(selected_item[0])
-        self.title.set(selected_item[1])
-        self.start_date.set(selected_item[2])
-        self.duration.set(selected_item[3])
-        self.event.set(selected_item[4])
-        self.price.set(selected_item[5])
-        self.payment.set(selected_item[6])
-        self.customer_id.set(selected_item[7])
+        ticket = Ticket(*selected_item)
+        self.id.set(ticket.id)
+        self.title.set(ticket.title)
+        self.start_date.set(ticket.start_date_time)
+        self.duration.set(ticket.duration)
+        self.event_id.set(ticket._event_id)
+        self.price.set(ticket.price)
+        self.payment_id.set(ticket._payment_id)
+        self.customer_id.set(ticket._customer_id)
 
     def save_click(self):
         status, message = TicketController.save(
@@ -88,12 +90,12 @@ class TicketView:
         self.title = LabelWithEntry(win, "Title", 20, 60)
         self.start_date = LabelWithEntry(win, "Start Date", 20, 100)
         self.duration = LabelWithEntry(win, "Duration", 20, 140, data_type="int")
-        self.event = LabelWithEntry(win, "Event", 20, 180)
+        self.event_id = LabelWithEntry(win, "Event ID", 20, 180, data_type="int")
         self.price = LabelWithEntry(win, "Price", 20, 220, data_type="int")
-        self.payment = LabelWithEntry(win, "Payment", 20, 260)
+        self.payment_id = LabelWithEntry(win, "Payment ID", 20, 260, data_type="int")
         self.customer_id = LabelWithEntry(win, "Customer ID", 20, 300, data_type="int")
 
-        self.table = Table(win, ["ID", "Title", "Start Date", "Duration", "Event", "Price", "Payment", "Customer ID"],
+        self.table = Table(win, ["ID", "Title", "Start Date", "Duration", "Event ID", "Price", "Payment ID", "Customer ID"],
           [60, 100, 120, 80, 100, 60, 80, 100], 400, 20, self.table_click)
         self.show_on_table()
 
@@ -106,4 +108,4 @@ class TicketView:
         win.mainloop()
 
 
-ui = TicketView()
+

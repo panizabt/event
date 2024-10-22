@@ -1,5 +1,6 @@
 from model.entity import *
 from controller import TicketController, PaymentController, CustomerController, EventController
+from view.ticket_view import TicketView
 
 # test : error
 start_date = datetime(2024, 11, 12, 20, 17, 30)
@@ -16,6 +17,8 @@ _, event  = EventController.save("Concert ali",  s_t, e_t, "Consert", 120, "lotf
 
 
 _, ticket = TicketController.save("concert", start_date, 90, event, 1000000, payment, customer)
+
+# ui = TicketView()
 
 # TicketController.edit(1, "concert", start_date, 90, "Concert music", 1000000, "Credit Card", 111)
 #
