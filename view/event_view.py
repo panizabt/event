@@ -11,7 +11,7 @@ class EventView:
         self.title.set("")
         self.start_date_time.set("")
         self.end_date_time.set("")
-        self.title_type.set("")
+        self.event_type.set("")
         self.duration.set(0)
         self.description.set("")
         self.price.set(0)
@@ -22,7 +22,7 @@ class EventView:
          self.title.set(select_item[1])
          self.start_date_time.set(select_item[2])
          self.end_date_time.set(select_item[3])
-         self.title_type.set(select_item[4])
+         self.event_type.set(select_item[4])
          self.duration.set(select_item[5])
          self.description.set(select_item[6])
          self.price.set(select_item[7])
@@ -33,7 +33,7 @@ class EventView:
              self.title.get(),
              self.start_date_time.get(),
              self.end_date_time.get(),
-             self.title_type.get(),
+             self.event_type.get(),
              self.duration.get(),
              self.description.get(),
              self.price.get(),
@@ -50,7 +50,7 @@ class EventView:
              self.title.get(),
              self.start_date_time.get(),
              self.end_date_time.get(),
-             self.title_type.get(),
+             self.event_type.get(),
              self.duration.get(),
              self.description.get(),
              self.price.get(),
@@ -81,7 +81,7 @@ class EventView:
         self.title = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
         self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
         self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
-        self.title_type = LabelWithEntry(win, "Title Type", 20, 80)
+        self.event_type = LabelWithEntry(win, "Title Type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 200, data_type="int")
