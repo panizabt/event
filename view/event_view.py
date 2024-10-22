@@ -9,7 +9,7 @@ class EventView:
     def reset_from(self):
         self.id.set(0)
         self.title_date.set("")
-        self.start_time.set("")
+        self.start_date_time.set("")
         self.end_date_time.set("")
         self.title_type.set("")
         self.duration.set(0)
@@ -20,7 +20,7 @@ class EventView:
     def table_click(self, select_item):
          self.id.set(select_item[0])
          self.title_date.set(select_item[1])
-         self.start_date.set(select_item[2])
+         self.start_date_time.set(select_item[2])
          self.end_date_time.set(select_item[3])
          self.title_type.set(select_item[4])
          self.duration.set(select_item[5])
@@ -31,7 +31,7 @@ class EventView:
     def save_click(self):
          status, message = EventController.save(
              self.title_date.get(),
-             self.start_date.get(),
+             self.start_date_time.get(),
              self.end_date_time.get(),
              self.title_type.get(),
              self.duration.get(),
@@ -48,7 +48,7 @@ class EventView:
          status, message = EventController.edit(
              self.id.get(),
              self.title_date.get(),
-             self.start_date.get(),
+             self.start_date_time.get(),
              self.end_date_time.get(),
              self.title_type.get(),
              self.duration.get(),
@@ -79,8 +79,8 @@ class EventView:
 
         self.id = LabelWithEntry(win,"Id", 20, 20, data_type="int", state="readonly")
         self.title_date = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
-        self.start_date = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
-        self.end_date_date = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
+        self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
+        self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
         self.title_type = LabelWithEntry(win, "Title Type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
@@ -96,6 +96,7 @@ class EventView:
         self.reset_form()
 
         win.mainloop()
+
 
 
 
