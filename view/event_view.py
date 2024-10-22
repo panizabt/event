@@ -78,10 +78,10 @@ class EventView:
         win.geometry("800x500")
 
         self.id = LabelWithEntry(win,"Id", 20, 20, data_type="int", state="readonly")
-        self.title = LabelWithEntry(win, "Title Date", 20, 200, data_type="date")
-        self.start_date_time = LabelWithEntry(win, "Start Date", 20, 200, data_type="date")
-        self.end_date_time = LabelWithEntry(win, "End Date Date", 20, 200, data_type="date")
-        self.event_type = LabelWithEntry(win, "Title Type", 20, 80)
+        self.title = LabelWithEntry(win, "Title", 20, 200, data_type="int")
+        self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 200, data_type="date")
+        self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 200, data_type="date")
+        self.event_type = LabelWithEntry(win, "Title_type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
         self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 200, data_type="int")
@@ -89,13 +89,15 @@ class EventView:
         self.table = Table(win, ["id", "title_date", "start_date", "end_date_time", "title_type", "duration", "description", "price"], [60, 120, 120, 120, 150, 80, 180, 100], 400, 20, self.table_click)
         self.table.refresh_table(EventController.find_all()[1])
     
-        Button(win, text="Save", width=10, command=self.save_click).place(x=100, y=180)
-        Button(win, text="Edit", width=10, command=self.edit_click).place(x=100, y=210)
-        Button(win, text="Remove", width=10, command=self.remove_click).place(x=100, y=240)
+        Button(win, text="Save", width=10,bg="red" ,  command=self.save_click).place(x=100, y=380)
+        Button(win, text="Edit", width=10,bg= "blue" , command=self.edit_click).place(x=100, y=310)
+        Button(win, text="Remove", width=10,bg="pink" , command=self.remove_click).place(x=100, y=340)
 
         self.reset_form()
 
         win.mainloop()
+
+ui = EventView()
 
 
 
