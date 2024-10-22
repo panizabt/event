@@ -14,4 +14,15 @@ CustomerController.save("reza","rezaii","rez","reza123",
 
 #CustomerController.remove(1)
 
+#CustomerController.find_all()
+
+#CustomerController.find_by_id(1)
+
+#CustomerController.find_by_family("rezaii")
+
+#CustomerController.find_by_name("reza")
+
+#CustomerController.find_by_username("rez")
+#CustomerController.find_by_password("reza123")
+
 # todo : find by username, usernameandpassword,
