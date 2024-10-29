@@ -84,7 +84,7 @@ class TicketView:
     def __init__(self):
         win = Tk()
         win.title("Ticket Management System")
-        win.geometry("1200x500")
+        win.geometry("1150x450")
 
         self.id = LabelWithEntry(win, "ID", 20, 30, data_type="int", state="readonly")
         self.title = LabelWithEntry(win, "Title", 20, 60)
@@ -99,13 +99,13 @@ class TicketView:
           [60, 100, 120, 80, 100, 60, 80, 100], 400, 20, self.table_click)
         self.show_on_table()
 
-        Button(win, text="Save", width=10, bg="green", command=self.save_click).place(x=100, y=340)
-        Button(win, text="Edit", width=10, bg="yellow", command=self.edit_click).place(x=100, y=380)
-        Button(win, text="Remove", width=10, bg="red", command=self.remove_click).place(x=100, y=420)
+        Button(win, text="Save", width=10, bg="green", command=self.save_click).place(x=90, y=350)
+        Button(win, text="Edit", width=10, bg="yellow", command=self.edit_click).place(x=190, y=350)
+        Button(win, text="Remove", width=10, bg="red", command=self.remove_click).place(x=290, y=350)
 
         # self.reset_form()
 
         win.mainloop()
 
-
+ui = TicketView()
 
