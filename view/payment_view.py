@@ -79,7 +79,7 @@ class PaymentView:
 
         self.id = LabelWithEntry(self.window, "Id", 20, 100, data_type="int", state= "readonly")
         self.amount = LabelWithEntry(self.window, "Amount", 20, 60, data_type= "int")
-        self.date = LabelWithEntry(self.window, "Date", 20, 140, data_type= "datetime", satat= "readonly")
+        self.date = LabelWithEntry(self.window, "Date", 20, 140, data_type= "datetime", state="readonly")
         self.payment_type = LabelWithEntry(self.window, "payment_type", 20, 20, data_type="str")
         self.description = LabelWithEntry(self.window, "Description", 20, 180, data_type= "str")
 
