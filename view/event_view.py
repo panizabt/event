@@ -93,13 +93,13 @@ class EventView:
 
         self.id = LabelWithEntry(win, "Id", 20, 30, data_type="int", state="readonly")
         self.title = LabelWithEntry(win, "Title", 20, 60)
-        self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 100)
-        self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 100)
-        self.event_type = LabelWithEntry(win, "Event_type", 20, 80)
-        self.duration = LabelWithEntry(win, "Duration", 20, 140, data_type="int")
-        self.description = LabelWithEntry(win, "Description", 20, 140)
+        self.start_date_time = LabelWithEntry(win, "Start_date_time", 20, 150)
+        self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 150)
+        self.event_type = LabelWithEntry(win, "Event_type", 20, 140)
+        self.duration = LabelWithEntry(win, "Duration", 20, 200, data_type="int")
+        self.description = LabelWithEntry(win, "Description", 20, 200)
         self.price = LabelWithEntry(win, "Price", 20, 220, data_type="int")
-        self.salon_id = LabelWithEntry(win, "Salon", 20, 250, data_type="int")
+        self.salon_id = LabelWithEntry(win, "Salon", 20, 220, data_type="int")
 
         self.table = Table(win, ["Id", "Title", "Start_date_time", "End_date_time", "Event_type", "Duration", "Description", "Price", "Salon_id"],
           [60, 100, 120, 120, 100, 80, 120, 100, 60], 400, 20, self.table_click)
