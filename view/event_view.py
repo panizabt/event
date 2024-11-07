@@ -97,8 +97,8 @@ class EventView:
         self.end_date_time = LabelWithEntry(win, "End_date_time", 20, 100)
         self.event_type = LabelWithEntry(win, "Event_type", 20, 80)
         self.duration = LabelWithEntry(win, "Duration", 20, 150, data_type="int")
-        self.description = LabelWithEntry(win, "Description", 20, 200)
-        self.price = LabelWithEntry(win, "Price", 20, 230, data_type="int")
+        self.description = LabelWithEntry(win, "Description", 20, 140)
+        self.price = LabelWithEntry(win, "Price", 20, 220, data_type="int")
         self.salon_id = LabelWithEntry(win, "Salon", 20, 250, data_type="int")
 
         self.table = Table(win, ["Id", "Title", "Start_date_time", "End_date_time", "Event_type", "Duration", "Description", "Price", "Salon_id"],
@@ -106,9 +106,9 @@ class EventView:
         self.show_on_table()
 
 
-        Button(win, text="Save", width=10, bg="red", command=self.save_click).place(x=100, y=380)
-        Button(win, text="Edit", width=10, bg="blue", command=self.edit_click).place(x=100, y=310)
-        Button(win, text="Remove", width=10, bg="pink", command=self.remove_click).place(x=100, y=340)
+        Button(win, text="Save", width=10, bg="red", command=self.save_click).place(x=90, y=350)
+        Button(win, text="Edit", width=10, bg="blue", command=self.edit_click).place(x=190, y=350)
+        Button(win, text="Remove", width=10, bg="pink", command=self.remove_click).place(x=290, y=350)
 
 
         # self.reset_form()
