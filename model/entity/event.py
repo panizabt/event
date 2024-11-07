@@ -13,10 +13,10 @@ class Event(Base):
     _duration = Column("duration", Integer)
     _description = Column("description", String(100))
     _price = Column("price", Integer, nullable=False)
+    
 
     ticket = relationship("Ticket", back_populates="event")
 
-    # todo : not recognized
     _salon_id = Column("salon_id", Integer, ForeignKey("salon_tbl.id"))
     salon = relationship("Salon", cascade="all")
 
