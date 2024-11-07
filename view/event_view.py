@@ -113,13 +113,12 @@ class EventView:
         Button(win, text="Remove", width=10, bg="pink", command=self.remove_click).place(x=100, y=340)
 
 
-        self.reset_form()
+        # self.reset_form()
 
         win.mainloop()
 
 
 ui = EventView()
-
 
 
 
