@@ -102,12 +102,12 @@ class EventView:
         self.salon_id = LabelWithEntry(win, "Salon", 20, 250, data_type="int")
 
         self.table = Table(win, ["Id", "Title", "Start_date_time", "End_date_time", "Event_type", "Duration", "Description", "Price", "Salon_id"],
-          [60, 100, 120, 120, 100, 80, 80, 100, 100], 400, 20, self.table_click)
+          [60, 100, 100, 100, 100, 100, 120, 100, 100], 400, 20, self.table_click)
         self.show_on_table()
 
 
         Button(win, text="Save", width=10, bg="red", command=self.save_click).place(x=90, y=350)
-        Button(win, text="Edit", width=10, bg="blue", command=self.edit_click).place(x=190, y=350)
+        Button(win, text="Edit", width=10, bg="green", command=self.edit_click).place(x=190, y=350)
         Button(win, text="Remove", width=10, bg="pink", command=self.remove_click).place(x=290, y=350)
 
 
