@@ -1,7 +1,7 @@
 from model.entity import *
 from controller import EventController, SalonController
 
-# todo : error
+
 s_t = datetime(2024,5,23,18,0,0)
 e_t = datetime(2024,5,23,20,0,0)
 
