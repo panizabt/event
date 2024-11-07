@@ -2,7 +2,7 @@ from datetime import datetime
 from tkinter import *
 import tkinter.ttk as ttk
 import tkinter.messagebox as msg
-
+from model.entity import Payment
 from controller.payment_controller import PaymentController
 from view.component import LabelWithEntry, Table
 
@@ -15,14 +15,16 @@ class PaymentView:
         self.payment_type.set("")
         self.description.set("")
 
-    @staticmethod
+
     def table_click(self,selected_item):
-        def table_click(self, select_item):
-            self.id.set(select_item[0])
-            self.amount.set(select_item[1])
-            self.date_time.set(select_item[2])
-            self.payment_type.set(select_item[3])
-            self.description.set(select_item[4])
+        payment = Payment(*selected_item)
+        self.id.set(payment.id)
+        self.amount.set(payment.amount)
+        self.date_time.set(payment.date_time)
+        self.payment_type.set(payment.payment_type)
+        self.description.set(payment.description)
+
+
 
 
     def save_record(self):
@@ -68,36 +70,42 @@ class PaymentView:
             msg.showerror("Not exist", message)
 
 
+    def clear_table(self):
+        self.table.delete(*self.table.get_children())
 
+    def show_on_table(self):
+        tickets = PaymentController.find_all()[1]
+        for payment in tickets:
+            self.table.insert("", "end", values=payment)
 
 
 
     def __init__(self):
-        self.window = Tk()
-        self.window.geometry('500x500')
-        self.window.title("PAYMENT")
+        win = Tk()
+        win.geometry("1150x450")
+        win.title("Pament Management")
 
-        self.id = LabelWithEntry(self.window, "Id", 20, 100, data_type="int", state= "readonly")
-        self.amount = LabelWithEntry(self.window, "Amount", 20, 60, data_type= "int")
-        self.date = LabelWithEntry(self.window, "Date", 20, 140, data_type= "datetime", state="readonly")
-        self.payment_type = LabelWithEntry(self.window, "payment_type", 20, 20, data_type="str")
-        self.description = LabelWithEntry(self.window, "Description", 20, 180, data_type= "str")
+        self.id = LabelWithEntry(win, "Id", 20, 30, data_type="int", state="readonly")
+        self.amount = LabelWithEntry(win, "Amount", 20, 60, data_type="int")
+        self.date = LabelWithEntry(win, "date_time", 20, 100, data_type="date_time")
+        self.payment_type = LabelWithEntry(win, "payment_type", 20, 120, data_type="str")
+        self.description = LabelWithEntry(win, "Description", 20, 140, data_type="str")
 
-        self.table = Table(self.window, ["Id", "Amount", "Date","payment Type", "description"],[60, 100, 100, 60, 60], 250, 20 ,self.table_click )
+        self.table = Table(win, ["Id", "Amount", "Date","payment Type", "description"],[60, 100, 100, 60, 60], 250, 20 ,self.table_click )
         self.table.refresh_table(PaymentController.find_all()[1])
 
-        self.table = ttk.Treeview(self.window, columns=(1, 2, 3, 4, 5), show="headings")
+        self.table = ttk.Treeview(win, columns=(1, 2, 3, 4, 5), show="headings")
         self.table.place(x=250, y=20)
 
 
-        Button(self.window, text="Save", command=self.save_record).place(x=100, y=220)
-        Button(self.window, text="Remove", command=self.remove_record).place(x=100, y=250)
-        Button(self.window, text="Edit", command=self.edit_record).place(x=100, y=280)
-        Button(self.window, text="Search", command=self.find_record).place(x=100, y=310)
+        Button(win, text="Save", command=self.save_record).place(x=100, y=220)
+        Button(win, text="Remove", command=self.remove_record).place(x=100, y=250)
+        Button(win, text="Edit", command=self.edit_record).place(x=100, y=280)
+        Button(win, text="Search", command=self.find_record).place(x=100, y=310)
 
-        self.reset_form()
+        # self.reset_form()
 
-        self.window.mainloop()
+        win.mainloop()
 
 
-ui=PaymentView()
+ui = PaymentView()
